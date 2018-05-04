@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 文件管理 -->
+	<package name="system_filemanage" namespace="/system/filemanage" extends="definepackage">
+		<!-- 文件管理主页面 -->
+		<action name="index_page">
+			<result>/jsp/system/filemanage/index_page.jsp</result>
+		</action>
+		<!-- 文件目录树  -->
+		<action name="directory_tree_info" class="com.ods.data.action.filemanage.FileDirectoryAction" method="directoryTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 文件目录页面加载 -->
+		<action name="directory_into_page" class="com.ods.data.action.filemanage.FileDirectoryAction" method="intoPage">
+			<result name="success">/jsp/system/filemanage/file_directory_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 文件目录新增修改 -->
+		<action name="directory_modify_info" class="com.ods.data.action.filemanage.FileDirectoryAction" method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件目录改变删除状态 -->
+		<action name="directory_delete_info" class="com.ods.data.action.filemanage.FileDirectoryAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件存储列表加载 -->
+		<action name="store_list_info" class="com.ods.data.action.filemanage.FileStoreAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 进入文件新增页面 -->
+		<action name="store_add_page" class="com.ods.data.action.filemanage.FileStoreAction" method="addPage">
+			<result name="success">/jsp/system/filemanage/file_store_add.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 进入文件存储修改页面 -->
+		<action name="store_update_page" class="com.ods.data.action.filemanage.FileStoreAction" method="updatePage">
+			<result name="success">/jsp/system/filemanage/file_store_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 文件上传 -->
+		<action name="store_add_info" class="com.ods.data.action.filemanage.FileStoreAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件修改 -->
+		<action name="store_update_info" class="com.ods.data.action.filemanage.FileStoreAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件验证-->
+		<action name="file_check" class="com.ods.data.action.filemanage.FileStoreAction" method="fileCheck">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件下载-->
+		<action name="file_download" class="com.ods.data.action.filemanage.FileStoreAction" method="fileDownload">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件资料删除 -->
+		<action name="store_delete_info" class="com.ods.data.action.filemanage.FileStoreAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件资料在线阅读-->
+		<action name="read_online_page">
+			<result name="success">/jsp/flexpaper/flexpaper_index.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 环保法律领导阅读列表 -->
+		<action name="read_page">
+			<result>/jsp/system/filemanage/index_read_page.jsp</result>
+		</action>
+		<!-- 环保法律领导在线阅读 -->
+		<action name="read_online_page1">
+			<result name="success">/jsp/flexpaper/flexpaper_index.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>	
+	</package>
+	
+	
+	
+	<!--文件信息-->
+	<package name="file_importinfo" namespace="/file/importinfo" extends="definepackage">
+		<action name="index_page">
+			<result>/jsp/fileimpport/file/file_index.jsp</result>
+		</action>
+		<!-- 信息列表 -->
+		<action name="list_info" class="com.ods.data.action.filemanage.FileStoreAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<action name="upload_page">
+			<result>/jsp/fileimpport/execlfile/execlfile_add.jsp</result>
+		</action>
+		<!-- 导入信息列表 -->
+		<action name="upload_info" class="com.ods.base.action.system.excelfileimport.ExeclFileImportInfoAction" method="uploadInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 下载导入文件内容 -->
+		<action name="download_execlfile_info" class="com.ods.base.action.system.excelfileimport.ExeclFileImportInfoAction" method="downloadExeclfileInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 下载帮助文件内容 -->
+		<action name="download_help_info" class="com.ods.base.action.system.excelfileimport.ExeclFileImportInfoAction" method="downloadHelpInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.role.bo">
+	<class name="RoleButton" table="t_role_button">
+		<id column="role_button_pk" name="roleButtonPk" type="string" unsaved-value="0">
+			<generator class="guid"/>
+		</id>
+		<property column="page_id" generated="never" lazy="false"
+			name="pageId" type="string"/> 
+		<property column="button_id" generated="never" lazy="false"
+			name="buttonId" type="string"/> 
+		<property column="role_pk" generated="never" lazy="false"
+			name="rolePk" type="string"/> 
+		<property column="delete_type" generated="never" lazy="false"
+			name="deleteType" type="int"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--t_execl_file_import_temp_content表的映射文件-->
+<hibernate-mapping package="com.ods.base.bo.system.excelfileimport">
+<class name="ExeclFileImportTempContent" table="t_execl_file_import_temp_content">
+ <id column="execl_file_import_temp_pk" name="execlFileImportTempPk"  type="string"  unsaved-value="0">
+<generator class="guid" />
+</id><property column="execl_file_import_pk"          name="execlFileImportPk"           type="string" />
+<property column="sheet_no"          name="sheetNo"           type="int" />
+<property column="row_no"          name="rowNo"           type="int" />
+<property column="file_colmun1"          name="fileColmun1"           type="string" />
+<property column="file_colmun2"          name="fileColmun2"           type="string" />
+<property column="file_colmun3"          name="fileColmun3"           type="string" />
+<property column="file_colmun4"          name="fileColmun4"           type="string" />
+<property column="file_colmun5"          name="fileColmun5"           type="string" />
+<property column="file_colmun6"          name="fileColmun6"           type="string" />
+<property column="file_colmun7"          name="fileColmun7"           type="string" />
+<property column="file_colmun8"          name="fileColmun8"           type="string" />
+<property column="file_colmun9"          name="fileColmun9"           type="string" />
+<property column="file_colmun10"          name="fileColmun10"           type="string" />
+<property column="file_colmun11"          name="fileColmun11"           type="string" />
+<property column="file_colmun12"          name="fileColmun12"           type="string" />
+<property column="file_colmun13"          name="fileColmun13"           type="string" />
+<property column="file_colmun14"          name="fileColmun14"           type="string" />
+<property column="file_colmun15"          name="fileColmun15"           type="string" />
+<property column="file_colmun16"          name="fileColmun16"           type="string" />
+<property column="file_colmun17"          name="fileColmun17"           type="string" />
+<property column="file_colmun18"          name="fileColmun18"           type="string" />
+<property column="file_colmun19"          name="fileColmun19"           type="string" />
+<property column="file_colmun20"          name="fileColmun20"           type="string" />
+<property column="file_colmun21"          name="fileColmun21"           type="string" />
+<property column="file_colmun22"          name="fileColmun22"           type="string" />
+<property column="file_colmun23"          name="fileColmun23"           type="string" />
+<property column="file_colmun24"          name="fileColmun24"           type="string" />
+<property column="file_colmun25"          name="fileColmun25"           type="string" />
+<property column="file_colmun26"          name="fileColmun26"           type="string" />
+<property column="file_colmun27"          name="fileColmun27"           type="string" />
+<property column="file_colmun28"          name="fileColmun28"           type="string" />
+<property column="file_colmun29"          name="fileColmun29"           type="string" />
+<property column="file_colmun30"          name="fileColmun30"           type="string" />
+<property column="file_colmun31"          name="fileColmun31"           type="string" />
+<property column="file_colmun32"          name="fileColmun32"           type="string" />
+<property column="file_colmun33"          name="fileColmun33"           type="string" />
+<property column="file_colmun34"          name="fileColmun34"           type="string" />
+<property column="file_colmun35"          name="fileColmun35"           type="string" />
+<property column="file_colmun36"          name="fileColmun36"           type="string" />
+<property column="file_colmun37"          name="fileColmun37"           type="string" />
+<property column="file_colmun38"          name="fileColmun38"           type="string" />
+<property column="file_colmun39"          name="fileColmun39"           type="string" />
+<property column="file_colmun40"          name="fileColmun40"           type="string" />
+<property column="file_colmun41"          name="fileColmun41"           type="string" />
+<property column="file_colmun42"          name="fileColmun42"           type="string" />
+<property column="file_colmun43"          name="fileColmun43"           type="string" />
+<property column="file_colmun44"          name="fileColmun44"           type="string" />
+<property column="file_colmun45"          name="fileColmun45"           type="string" />
+<property column="file_colmun46"          name="fileColmun46"           type="string" />
+<property column="file_colmun47"          name="fileColmun47"           type="string" />
+<property column="file_colmun48"          name="fileColmun48"           type="string" />
+<property column="file_colmun49"          name="fileColmun49"           type="string" />
+<property column="file_colmun50"          name="fileColmun50"           type="string" />
+ 
+</class> 
+</hibernate-mapping>

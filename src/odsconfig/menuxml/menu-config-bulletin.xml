@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<menuone id="bulletin" name="公告管理">
+		<url>#</url>
+		<orderBy>2</orderBy>
+		<childmenutwo id="bulletin|send" name="发布公告" colorFont="" color="">
+			<url>bulletin/send/index_page.ods</url>
+			<orderBy>1</orderBy>
+		</childmenutwo>
+		<childmenutwo id="bulletin|done" name="已发公告" colorFont="" color="">
+			<url>bulletin/send/list_index_page.ods</url>
+			<orderBy>2</orderBy>
+		</childmenutwo>
+		<childmenutwo id="bulletin|waitread" name="待阅公告" colorFont="" color="">
+			<url>bulletin/receive/index_page.ods?isread=0</url>
+			<orderBy>3</orderBy>
+		</childmenutwo>
+		<childmenutwo id="bulletin|receive" name="已阅公告" colorFont="" color="">
+			<url>bulletin/receive/index_page.ods?isread=1</url>
+			<orderBy>4</orderBy>
+		</childmenutwo>
+		<childmenutwo id="bulletin|draft" name="公告草稿" colorFont="" color="">
+			<url>bulletin/draft/index_page.ods</url>
+			<orderBy>5</orderBy>
+		</childmenutwo>
+</menuone>
+</menu>

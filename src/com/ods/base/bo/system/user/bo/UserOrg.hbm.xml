@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.user.bo">
+ <class name="UserOrg" table="v_user_org">
+  <id column="user_pk" name="userPk" type="string" unsaved-value="0">
+   <generator class="guid"/>
+  </id>
+  <property column="user_no" generated="never" lazy="false"
+   name="userNo" type="int"/>
+  <property column="org_pk" generated="never" lazy="false" name="orgPk" type="string"/>
+  <property column="all_org_pk" generated="never" lazy="false"
+   name="allOrgPk" type="string"/>
+  <property column="duty_pk" generated="never" lazy="false"
+   name="dutyPk" type="string"/>
+  <property column="father_user_pk" generated="never" lazy="false"
+   name="fatherUserPk" type="string"/>
+  <property column="user_loginName" generated="never" lazy="false"
+   name="userLoginName" type="string"/>
+  <property column="user_password" generated="never" lazy="false"
+   name="userPassword" type="string"/>
+  <property column="user_state" generated="never" lazy="false"
+   name="userState" type="int"/>
+  <property column="user_realname" generated="never" lazy="false"
+   name="userRealname" type="string"/>
+  <property column="user_sex" generated="never" lazy="false"
+   name="userSex" type="int"/>
+  <property column="user_phone" generated="never" lazy="false"
+   name="userPhone" type="string"/>
+  <property column="office_tele" generated="never" lazy="false"
+   name="officeTele" type="string"/>
+  <property column="user_email" generated="never" lazy="false"
+   name="userEmail" type="string"/>
+  <property column="user_fax" generated="never" lazy="false"
+   name="userFax" type="string"/>
+  <property column="user_qq" generated="never" lazy="false"
+   name="userQq" type="string"/>
+  <property column="delete_type" generated="never" lazy="false"
+   name="deleteType" type="int"/>
+  <property column="create_user_pk" generated="never" lazy="false"
+   name="createUserPk" type="string"/>
+  <property column="create_time" generated="never" lazy="false"
+   name="createTime" type="string"/>
+  <property column="org_ward_no" generated="never" lazy="false"
+   name="orgWardNo" type="string"/>
+  <property column="org_police_team" generated="never" lazy="false"
+   name="orgPoliceTeam" type="string"/>
+  <property column="org_name" generated="never" lazy="false"
+   name="orgName" type="string"/>
+ </class>
+</hibernate-mapping>

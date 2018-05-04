@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.role.bo">
+	<class name="RoleMenu" table="t_role_menu">
+		<id column="role_menu_pk" name="roleMenuPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="menu_id_one" name="menuIdOne" type="string" />
+		<property column="menu_one_order" name="menuOneOrder" type="int" />
+		<property column="menu_id_two" name="menuIdTwo" type="string" />
+		<property column="menu_two_order" name="menuTwoOrder" type="int" />
+		<property column="menu_id_three" name="menuIdThree" type="string" />
+		<property column="menu_three_order" name="menuThreeOrder"
+			type="int" />
+		<property column="menu_id_four" name="menuIdFour" type="string" />
+		<property column="menu_four_order" name="menuFourOrder" type="int" />
+		<property column="role_pk" name="rolePk" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

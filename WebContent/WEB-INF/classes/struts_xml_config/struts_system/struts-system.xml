@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+	<!--修改密码-->
+	<package name="system_pass" namespace="/system/pass" extends="definepackage">
+		<!-- 进入修改密码主页 -->
+		<action name="index_page">
+			<result>/jsp/system/password/password.jsp</result>
+		</action>
+		<!-- 密码修改 -->
+		<action name="updatepass" class="com.ods.base.action.system.user.UserAction" method="updatePass">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!--角色权限-->
+	<package name="system_resource" namespace="/system/resource" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/system/rolereso/role_index.jsp</result>
+		</action>  
+		<!-- 角色信息 -->
+		<action name="role_tree_info" class="com.ods.base.action.system.role.RoleAction" method="roleTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="add_info" class="com.ods.base.action.system.role.RoleAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入修改 -->
+		<action name="update_page" class="com.ods.base.action.system.role.RoleAction" method="modifyPage">
+			<result name="success">/jsp/system/rolereso/role_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行修改 -->
+		<action name="update_info" class="com.ods.base.action.system.role.RoleAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 执行删除 -->
+		<action name="deleorreset_info" class="com.ods.base.action.system.role.RoleAction" method="deleOrResetInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 模块权限赋予权限时信息 -->
+		<action name="resource_onemenu_tree_info" class="com.ods.base.action.system.role.RoleAction" method="resourceOneMenuTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 组织机构树权限-->
+		<action name="resource_org_tree_info" class="com.ods.base.action.system.role.RoleAction" method="resourceOrgTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 权限信息 -->
+		<action name="resource_234menu_tree_info" class="com.ods.base.action.system.role.RoleAction" method="resource234TreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 进入角色权限信息 -->
+		<action name="resource_tree_page">
+			<result>/jsp/system/rolereso/resource_modi.jsp</result>
+		</action>
+		<!-- 添加模块权限信息 -->
+		<action name="modi_one_menu_info" class="com.ods.base.action.system.role.RoleAction" method="modiOneMenuInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 添加组织权限信息 -->
+		<action name="modi_org_info" class="com.ods.base.action.system.role.RoleAction" method="modiOrgInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 菜单权限的模块权限列表下拉选择框 -->
+		<action name="module_list_info" class="com.ods.base.action.system.role.RoleAction" method="moduleListInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 添加角色菜单权限信息 -->
+		<action name="modi_234menu_resource_info" class="com.ods.base.action.system.role.RoleAction" method="modiMenu234ResourceInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 选择角色后角色菜单权限内容 --> 
+		<action name="role_menu_tree_info_view" class="com.ods.base.action.system.role.RoleAction" method="roleMenuTreeInfoView">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action> 
+		<!-- 添加角色门户权限展现信息 -->
+		<action name="role_portal_tree_info" class="com.ods.base.action.system.role.RoleAction" method="rolePortalTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action> 
+		<!-- 添加门户权限信息 -->
+		<action name="modi_portal_resource_info" class="com.ods.base.action.system.role.RoleAction" method="modiPortalResourceInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 选择角色后门户权限展现信息 -->
+		<action name="role_portal_tree_info_view" class="com.ods.base.action.system.role.RoleAction" method="rolePortalTreeInfoView">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action> 
+	</package>
+	
+	<!--角色分配-->
+	<package name="system_roleusergroup" namespace="/system/roleusergroup" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/system/roleusergroup/index.jsp</result>
+		</action>
+		<!-- 进入授权查看授权页面 -->
+		<action name="accredit_page" class="com.ods.base.action.system.user.UserAction" method="accreditPage">
+			<result name="success">/jsp/system/roleusergroup/user_role_accredit_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 进入批量授权页面 -->
+		<action name="multi_accredit_page" class="com.ods.base.action.system.user.UserAction" method="multiAccreditPage">
+			<result name="success">/jsp/system/roleusergroup/multi_user_role_accredit_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 列表 -->
+		<action name="user_select_list_info" class="com.ods.base.action.system.user.UserAction" method="selectListInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="multi_accredit_info" class="com.ods.base.action.system.user.UserAction" method="multiAccreditInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action> 
+	</package>
+	
+	<!--用户角色-->
+	<package name="system_userrole" namespace="/system/userrole" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/system/userrole/user_role_indext.jsp</result>
+		</action>
+		<!-- 进入授权页面 -->
+		<action name="accredit_page" class="com.ods.base.action.system.user.UserAction" method="accreditPage">
+			<result name="success">/jsp/system/userrole/user_role_accredit_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="accredit_info" class="com.ods.base.action.system.user.UserAction" method="accreditInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!--系统参数-->
+	<package name="system_dict" namespace="/system/dict" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/system/dict/dictionary_index.jsp</result>
+		</action>
+		<!-- 功能菜单 -->
+		<action name="menu_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="menuInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 列表 -->
+		<action name="list_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 树型 -->
+		<action name="tree_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="treeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<action name="combo_tree_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="comboTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 进入添加 -->
+		<action name="add_page">
+			<result name="success">/jsp/system/dict/dictionary_add.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="add_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入查看-->
+		<action name="view_page" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="modifyPage">
+			<result name="success">/jsp/system/dict/dictionary_view.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 进入修改 -->
+		<action name="update_page" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="modifyPage">
+			<result name="success">/jsp/system/dict/dictionary_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行修改 -->
+		<action name="update_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 执行删除 -->
+		<action name="delete_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 树形节点移动 -->
+		<action name="moveTreeNode" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="moveTreeNode">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 树形节点移动 -->
+		<action name="combo_tree_info" class="com.ods.dic.action.datadictionarycommon.DataDictionaryCommonAction" method="comboTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+	</package>
+	
+	<!--日志管理-->
+	<package name="system_log" namespace="/system/log" extends="definepackage">
+		<!-- 进入日志管理主页 -->
+		<action name="index_page">
+			<result>/jsp/system/operationlog/operationLog_main.jsp</result>
+		</action>
+		<!-- 加载组织机构用户树-->
+		<action name="tree_info" class="com.ods.base.action.system.log.OperationLogAction" method="treeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!--用户列表加载-->
+		<action name="log_user_info" class="com.ods.base.action.system.log.OperationLogAction" method="LogList">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<!--进入个人日志列表页面 -->
+		<action name="log_listInfo">
+			<result>/jsp/system/operationlog/operationLog_grid.jsp</result>
+		</action>
+		<!--个人日志信息加载 -->
+		<action name="log_info" class="com.ods.base.action.system.log.OperationLogAction" method="logListInfo">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<action name="clear_info" class="com.ods.base.action.system.log.OperationLogAction" method="clearLogInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!--进入所有日志列表页面 -->
+		<action name="log_fulldelete">
+			<result>/jsp/system/operationlog/fulldelete_main.jsp</result>
+		</action>
+		<!--所有日志列表 -->
+		<action name="log_fulldelete_list" class="com.ods.base.action.system.log.OperationLogAction" method="logFulldeleteList">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<!--删除指定日期段的全部列表 -->
+		<action name="log_fulldelete_delete" class="com.ods.base.action.system.log.OperationLogAction" method="logFulldeleteDelete">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	
+	<!-- 组织机构管理--> 
+	<package name="org_manage" namespace="/system/org" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/system/org/org_index.jsp</result>
+		</action>
+		<!-- 加载一级组织机构树-->
+		<action name="treeInfoFirstOrg" class="com.ods.base.action.system.org.OrgAction" method="treeInfoFirstOrg">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 加载所有组织机构树-->
+		<action name="tree_info" class="com.ods.base.action.system.org.OrgAction" method="treeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 加载组织机构树-->
+		<action name="comboxtree_info" class="com.ods.base.action.system.org.OrgAction" method="comboxTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 加载所有组织机构并带用户树结构-->
+		<action name="org_user_tree_info" class="com.ods.base.action.system.org.OrgAction" method="orgUserTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		<!-- 下拉组织机构树-->
+		<action name="treecombox_info" class="com.ods.base.action.system.org.OrgAction" method="treeComboxInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action> 
+		<!-- 进入添加 -->
+		<action name="add_page">
+			<result name="success">/jsp/system/org/org_add.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="add_info" class="com.ods.base.action.system.org.OrgAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入修改 -->
+		<action name="update_page" class="com.ods.base.action.system.org.OrgAction" method="modifyPage">
+			<result name="success">/jsp/system/org/org_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行修改 -->
+		<action name="update_info" class="com.ods.base.action.system.org.OrgAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 执行删除 -->
+		<action name="delete_info" class="com.ods.base.action.system.org.OrgAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 获取简称 -->
+		<action name="alphabet_byname" class="com.ods.base.action.system.org.OrgAction" method="alphabetByName">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!--组织结构详细信息-->
+	<package name="org_detail" namespace="/org/detail" extends="definepackage">
+		<!-- 进入组织结构详细信息主页 -->
+		<action name="index_page">
+			<result>/jsp/system/orgdetail/index_page.jsp</result>
+		</action>
+		<!-- 页面加载 -->
+		<action name="into_page" class="com.ods.base.action.system.org.OrgDetailAction" method="intoPage">
+			<result name="success">/jsp/system/orgdetail/detail_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 新增修改 -->
+		<action name="modify_info" class="com.ods.base.action.system.org.OrgDetailAction" method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 登录用户管理配置 -->
+	<package name="rbacuser" namespace="/system/user" extends="definepackage">
+		<!-- 用户列表加载 -->
+		<action name="list_info" class="com.ods.base.action.system.user.UserAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 进入添加 -->
+		<action name="add_page">
+			<result name="success">/jsp/system/user/user_add.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 验证添加的登录名 -->
+		<action name="valid_user_loginname" class="com.ods.base.action.system.user.UserAction" method="validUserLoginName">
+			<result name="success">/jsp/system/user/valid_success.jsp</result>
+			<result name="error">/jsp/system/user/valid_error.jsp</result>
+		</action>
+		<!-- 验证添加的警号 -->
+		<action name="valid_user_no" class="com.ods.base.action.system.user.UserAction" method="validUserNo">
+			<result name="success">/jsp/system/user/valid_success.jsp</result>
+			<result name="error">/jsp/system/user/valid_error.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="add_info" class="com.ods.base.action.system.user.UserAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入查看-->
+		<action name="view_page" class="com.ods.base.action.system.user.UserAction" method="modifyPage">
+			<result name="success">/jsp/system/user/user_view.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 进入修改 -->
+		<action name="update_page" class="com.ods.base.action.system.user.UserAction" method="modifyPage">
+			<result name="success">/jsp/system/user/user_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行修改 -->
+		<action name="update_info" class="com.ods.base.action.system.user.UserAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 改变删除状态 -->
+		<action name="delete_info" class="com.ods.base.action.system.user.UserAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 密码复位 -->
+		<action name="reset_pass_word" class="com.ods.base.action.system.user.UserAction" method="resetPassWord">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入转移部门页面 -->
+		<action name="transfer_page">
+			<result name="success">/jsp/system/user/transfer_org.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 转移员工部门-->
+		<action name="transfer_org" class="com.ods.base.action.system.user.UserAction" method="transferOrg">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 改变登录状态 -->
+		<action name="change_login_state" class="com.ods.base.action.system.user.UserAction" method="changeLoginState">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 选择人员页面(有树结构) -->
+		<action name="select_user_tree_list">
+			<result name="success">/jsp/system/user/select_user_tree_list.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 选择人员页面(只是列表结构) -->
+		<action name="select_user_list">
+			<result name="success">/jsp/system/user/select_user_list.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 其它页面选择用户和组织机构 -->  
+		<action name="selectUserOrg" >
+			<result name="success">/jsp/common/select_user.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		<action name="userOrgSelectList" class="com.ods.base.action.system.user.UserOrgAction" method="userOrgSelectList">
+			<result name="success">/jsp/common/grid.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!--消息提醒设置-->
+	<package name="message_read_manage" namespace="/system/message" extends="definepackage">
+		<action name="mana_page">
+			<result>/jsp/message/message_manage.jsp</result>
+		</action>
+		<action name="update_info" class="com.ods.rbac.action.messageread.MessageReadAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 流程设计管理 -->
+	<package name="system_flow" namespace="/system/flow" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/system/flow/index_page.jsp</result>
+		</action>
+		<!-- 进入社区流程设计主页 -->
+		<action name="station_index_page">
+			<result>/jsp/system/flow/station_index_page.jsp</result>
+		</action>
+		<!-- 列表加载 -->
+		<action name="list_info" class="com.ods.data.action.flow.FlowInfoAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 页面加载 -->
+		<action name="into_page" class="com.ods.data.action.flow.FlowInfoAction" method="intoPage">
+			<result name="success">/jsp/system/flow/flow_info_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 新增修改 -->
+		<action name="modify_info" class="com.ods.data.action.flow.FlowInfoAction" method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 改变删除状态 -->
+		<action name="delete_info" class="com.ods.data.action.flow.FlowInfoAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 子表列表加载 -->
+		<action name="detail_list_info" class="com.ods.data.action.flow.FlowDetailAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 子表页面加载 -->
+		<action name="detail_into_page" class="com.ods.data.action.flow.FlowDetailAction" method="intoPage">
+			<result name="success">/jsp/system/flow/flow_detail_page.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 子表新增修改 -->
+		<action name="detail_modify_info" class="com.ods.data.action.flow.FlowDetailAction" method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 子表改变删除状态 -->
+		<action name="detail_delete_info" class="com.ods.data.action.flow.FlowDetailAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!--流程管理器-->
+	<package name="systemflowmanager" namespace="/system/flowmanager" extends="definepackage">
+		<!--流程管理器主页面-->
+		<action name="index_page">
+			<result>/jsp/system/flowmanager/flowmanager_list.jsp</result>
+		</action>
+		<!--流程管理节点编辑页面-->
+		<action name="flow_node_edit_page">
+			<result>/jsp/system/flowmanager/flow_node_edit_page.jsp</result>
+		</action>
+	</package>
+	
+	
+	<!--配置管理-->
+	<package name="system_config" namespace="/system/config" extends="definepackage">
+		<action name="modify_page" class="com.ods.special.config.action.SpecialConfigAction" method="modifyPage">
+			<result>/jsp/system/config/config_modify.jsp</result>
+		</action>
+		<action name="modify_info" class="com.ods.special.config.action.SpecialConfigAction" method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<action name="suspect_modify_page">
+			<result>/jsp/system/config/suspect_modify.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<object-create-rule pattern="fileImports"
+		classname="com.ods.util.config.bean.xml.fileImport.FileImports" />
+	<set-properties-rule />
+	<pattern value="fileImports/fileImport">
+		<object-create-rule
+			classname="com.ods.util.config.bean.xml.fileImport.FileImport" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" />
+			<alias attr-name="name" prop-name="name" />
+		</set-properties-rule>
+
+		<bean-property-setter-rule pattern="startRow" /> 
+		<bean-property-setter-rule pattern="columnSum" /> 
+		<bean-property-setter-rule pattern="checkCellDataRule" />
+		<set-next-rule methodname="addFileImportList" />
+	</pattern>
+</digester-rules>

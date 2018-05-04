@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<menuone id="system" name="系统管理" systemAdmin="true">
+		<url>#</url>
+		<orderBy>18</orderBy>
+		<childmenutwo id="system|pass" name="个人密码修改" colorFont="密码修改" color="green" systemAdmin="true">
+			<url>system/pass/index_page.ods</url>
+			<orderBy>1</orderBy>
+		</childmenutwo>
+		<childmenutwo id="system|user" name="组织用户管理" colorFont="组织用户" color="blue" systemAdmin="true">
+			<url>system/org/index_page.ods</url>
+			<orderBy>2</orderBy>
+		</childmenutwo>
+		<childmenutwo id="system|resource" name="系统权限管理" colorFont="系统权限" color="maroon" systemAdmin="true">
+			<url>#</url>
+			<orderBy>3</orderBy>
+			<childmenuthree id="system|resource|role" name="角色授权" colorFont="角色" color="green" systemAdmin="true">
+				<url>system/resource/index_page.ods</url>
+				<orderBy>1</orderBy>
+			</childmenuthree>
+			<childmenuthree id="system|resource|userrole" name="用户授权" colorFont="用户" color="blue" systemAdmin="true">
+				<url>system/userrole/index_page.ods</url>
+				<orderBy>2</orderBy>
+			</childmenuthree>
+			<childmenuthree id="system|resource|rolegroup" name="用户批量授权" colorFont="用户批量" color="maroon" systemAdmin="true">
+				<url>system/roleusergroup/index_page.ods</url>
+				<orderBy>3</orderBy>
+			</childmenuthree>
+		</childmenutwo>
+		<childmenutwo id="system|dict" name="全局数据字典" colorFont="数据字典" color="green" systemAdmin="true">
+			<url>system/dict/index_page.ods</url>
+			<orderBy>4</orderBy>
+		</childmenutwo>
+		
+	    <childmenutwo id="search|database" name="检索数据库" colorFont="检索" color="green" systemAdmin="true">
+			<url>search/database/index_page.ods</url>
+			<orderBy>5</orderBy>
+		</childmenutwo>
+		
+		<childmenutwo id="system|log" name="系统日志管理" colorFont="系统日志" color="green" systemAdmin="true">
+			<url>#</url>
+			<orderBy>8</orderBy>
+			<childmenuthree id="system|log|info" name="系统日志信息" colorFont="日志信息" color="blue" systemAdmin="true">
+				<url>system/log/index_page.ods</url>
+				<orderBy>1</orderBy>
+			</childmenuthree>
+			<childmenuthree id="system|log|delete" name="系统日志删除" colorFont="日志删除" color="maroon" systemAdmin="true">
+				<url>system/log/log_fulldelete.ods</url>
+				<orderBy>2</orderBy>
+			</childmenuthree>
+		</childmenutwo>
+	</menuone>
+
+</menu>

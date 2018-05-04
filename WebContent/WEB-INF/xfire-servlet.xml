@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 引入XFire配置信息 -->
+    <import resource="classpath:org/codehaus/xfire/spring/xfire.xml" />
+    
+    <!-- 定义访问的url-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+       <property name="urlMap"> 
+           <map> 
+              <entry key="services/KLmesService.ws"> 
+                  <ref bean="KLmesService" /> 
+              </entry> 
+           </map> 
+       </property> 
+    </bean>
+
+    <!-- 使用XFire导出器 -->
+    <bean id="baseWebService" class="org.codehaus.xfire.spring.remoting.XFireExporter" lazy-init="false" abstract="true">
+       <property name="serviceFactory" ref="xfire.serviceFactory" />
+       <property name="xfire" ref="xfire" />
+    </bean>
+    
+    <!-- 建立web service服务 -->
+    <bean id="KLmesService" parent="baseWebService">
+       <property name="serviceBean" ref="bomManagerBaseServiceBean" />
+       <property name="serviceClass" value="com.ods.data.bommanager.webservice.handler.BomManagerBaseService" />
+    </bean>
+</beans>

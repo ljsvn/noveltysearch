@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<object-create-rule pattern="reports"
+		classname="com.ods.util.jasper.bo.xml.Reports" />
+	<set-properties-rule />
+	<pattern value="reports/common">
+		<object-create-rule classname="com.ods.util.jasper.bo.xml.Common" />
+		<set-next-rule methodname="setCommon" />
+	</pattern>
+	<pattern value="reports/common/query">
+		<object-create-rule classname="com.ods.util.jasper.bo.xml.Query" />
+		<set-next-rule methodname="setQuery" />
+	</pattern>
+	<pattern value="reports/common/query/parameter">
+		<object-create-rule classname="com.ods.util.jasper.bo.xml.Parameter" />
+		<set-properties-rule> 
+			<alias attr-name="name" prop-name="name" /> 
+			<alias attr-name="showName" prop-name="showName" /> 
+		</set-properties-rule>  
+		<bean-property-setter-rule pattern="type" />
+		<bean-property-setter-rule pattern="vtype" />
+		<bean-property-setter-rule pattern="value" />  
+		<bean-property-setter-rule pattern="className" />
+		<bean-property-setter-rule pattern="methodName" />
+		<bean-property-setter-rule pattern="methodNamePage" />
+		<bean-property-setter-rule pattern="checkRegular" />
+		<bean-property-setter-rule pattern="warnContent" />
+		<bean-property-setter-rule pattern="timeFormat" />
+		<bean-property-setter-rule pattern="operation" />
+		<set-next-rule methodname="addParameterList" />
+	</pattern>
+
+	<pattern value="reports/report">
+		<object-create-rule classname="com.ods.util.jasper.bo.xml.Report" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" />
+			<alias attr-name="name" prop-name="name" />
+			<alias attr-name="jasperFile" prop-name="jasperFile" />
+			<alias attr-name="dataSourceSrc" prop-name="dataSourceSrc" />
+			<alias attr-name="dbName" prop-name="dbName" />
+			<alias attr-name="detailColorStart" prop-name="detailColorStart" />
+		</set-properties-rule>
+		<set-next-rule methodname="addReportList" />
+	</pattern>
+
+	<pattern value="reports/report/query">
+		<object-create-rule classname="com.ods.util.jasper.bo.xml.Query" />
+		<set-next-rule methodname="setQuery" />
+	</pattern>
+
+	<pattern value="reports/report/query/parameter">
+		<object-create-rule classname="com.ods.util.jasper.bo.xml.Parameter" />
+		<set-properties-rule> 
+			<alias attr-name="name" prop-name="name" /> 
+			<alias attr-name="showName" prop-name="showName" /> 
+		</set-properties-rule>  
+		<bean-property-setter-rule pattern="type" />
+		<bean-property-setter-rule pattern="vtype" />
+		<bean-property-setter-rule pattern="value" />  
+		<bean-property-setter-rule pattern="className" />
+		<bean-property-setter-rule pattern="methodName" />
+		<bean-property-setter-rule pattern="methodNamePage" />
+		<bean-property-setter-rule pattern="checkRegular" />
+		<bean-property-setter-rule pattern="warnContent" />
+		<bean-property-setter-rule pattern="timeFormat" />
+		<bean-property-setter-rule pattern="operation" />
+		<set-next-rule methodname="addParameterList" />
+	</pattern>
+</digester-rules>

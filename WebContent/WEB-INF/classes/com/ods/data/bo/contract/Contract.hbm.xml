@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--表的映射文件 -->
+<hibernate-mapping package="com.ods.data.bo.contract">
+	<class name="Contract" table="t_contract">
+		<id column="contract_pk" name="contractPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="contract_name" name="contractName" type="string" />
+		<property column="contract_code" name="contractCode" type="string" />
+		<property column="contract_ename" name="contractEname" type="string" />
+		<property column="company" name="company" type="string" />
+		<property column="lead" name="lead" type="string" />
+		<property column="address" name="address" type="string" />
+		<property column="post_code" name="postCode" type="string" />
+		<property column="linkman" name="linkman" type="string" />
+		<property column="tel" name="tel" type="string" />
+		<property column="email" name="email" type="string" />
+		<property column="begin_time" name="beginTime" type="string" />
+		<property column="end_time" name="endTime" type="string" />
+		<property column="leading_official" name="leadingOfficial"
+			type="string" />
+		<property column="office_holder" name="officeHolder" type="string" />
+		<property column="purpose_scope" name="purposeScope" type="string" />
+		<property column="project_approval" name="projectApproval"
+			type="string" />
+		<property column="achievement" name="achievement" type="string" />
+		<property column="objective_other" name="objectiveOther"
+			type="string" />
+		<property column="novelty_point" name="noveltyPoint" type="string" />
+		<property column="key_words" name="keyWords" type="string" />
+		<property column="contract_state" name="contractState" type="string" />
+		<property column="file_path" name="filePath" type="string" />
+		<property column="file_name" name="fileName" type="string" />
+		<property column="search_terms_strategy" name ="searchTermsStrategy" type ="string" />
+		<property column="memo" name="memo" type="string" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+		<property column="taxpayer_no" name="taxpayerNo" type="string" />
+	</class>
+</hibernate-mapping>

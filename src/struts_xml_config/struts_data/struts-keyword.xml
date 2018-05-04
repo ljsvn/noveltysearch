@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="keyword" namespace="/key/word" extends="definepackage">
+		<!-- -->
+		<action name="index_page">
+			<result>/jsp/data/keyword/keyword_index.jsp</result>
+		</action>
+		
+		<!--列表信息-->
+		<action name="list_info" class="com.ods.data.action.KeyWordAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!--选择-->
+		<action name="select_info" class="com.ods.data.action.KeyWordAction" method="selectInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		
+	</package>
+</struts>

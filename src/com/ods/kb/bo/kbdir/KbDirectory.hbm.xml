@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.ods.kb.bo.kbdir">
+	<class name="KbDirectory" table="t_kb_directory">
+		<id column="kb_dir_pk" name="kbDirPk" type="string" unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="kb_dir_name" 		   name="kbDirName" 	  		    type="string" />
+		<property column="kb_dir_gbpk"	   	   name="kbDirGbpk"					type="string" />
+		<property column="kb_dir_clevel"	   name="kbDirClevel"				type="int" />
+		<property column="kb_dir_flag"	       name="kbDirFlag"		    		type="string" />
+		<property column="kb_dir_excel_flag"   name="kbDirExcelFlag"	     	type="string" />
+		<property column="delete_type" 	 	 name="deleteType" 		type="int" />
+		<property column="create_user_pk" 	name="createUserPk" 		type="string" />
+		<property column="create_time" 	       name="createTime" 				type="string" />
+	</class>
+</hibernate-mapping>
+

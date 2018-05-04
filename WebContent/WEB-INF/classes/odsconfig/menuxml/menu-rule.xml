@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<object-create-rule pattern="menu"
+		classname="com.ods.base.bo.menu.xml.Menu" />
+	<set-properties-rule />
+
+	<pattern value="menu/menuone">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.MenuOne" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" />
+			<alias attr-name="name" prop-name="name" />
+			<alias attr-name="systemAdmin" prop-name="systemAdmin" />
+			<alias attr-name="dutyAuthority" prop-name="dutyAuthority" />
+			<alias attr-name="portal" prop-name="portal" />
+		</set-properties-rule> 
+		<bean-property-setter-rule pattern="url"/>  
+		<bean-property-setter-rule pattern="orderBy"/>  
+		<set-next-rule methodname="addMenuOneList" /> 
+	</pattern>
+	<pattern value="menu/menuone/childmenutwo">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.ChildMenuTwo" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" />
+			<alias attr-name="name" prop-name="name" />
+			<alias attr-name="colorFont" prop-name="colorFont" />
+			<alias attr-name="color" prop-name="color" />
+			<alias attr-name="portal" prop-name="portal" />
+			<alias attr-name="systemAdmin" prop-name="systemAdmin" />
+			<alias attr-name="dutyAuthority" prop-name="dutyAuthority" />
+		</set-properties-rule>
+		<bean-property-setter-rule pattern="url"/>  
+		<bean-property-setter-rule pattern="orderBy"/>   
+		<set-next-rule methodname="addChildMenuTwo" />
+	</pattern>
+	<pattern value="menu/menuone/childmenutwo/childmenuthree">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.ChildMenuThree" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" />
+			<alias attr-name="name" prop-name="name" />
+			<alias attr-name="colorFont" prop-name="colorFont" />
+			<alias attr-name="color" prop-name="color" />
+			<alias attr-name="systemAdmin" prop-name="systemAdmin" />
+			<alias attr-name="portal" prop-name="portal" />
+			<alias attr-name="dutyAuthority" prop-name="dutyAuthority" />
+		</set-properties-rule>
+		<bean-property-setter-rule pattern="url"/>  
+		<bean-property-setter-rule pattern="orderBy"/>   
+		<set-next-rule methodname="addChildMenuThree" />
+	</pattern>
+	<pattern value="menu/menuone/childmenutwo/childmenuthree/childmenufour">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.ChildMenuFour" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" />
+			<alias attr-name="name" prop-name="name" />
+			<alias attr-name="colorFont" prop-name="colorFont" />
+			<alias attr-name="color" prop-name="color" />
+			<alias attr-name="systemAdmin" prop-name="systemAdmin" />
+			<alias attr-name="dutyAuthority" prop-name="dutyAuthority" />
+			<alias attr-name="portal" prop-name="portal" />
+		</set-properties-rule>
+		<bean-property-setter-rule pattern="url"/>  
+		<bean-property-setter-rule pattern="orderBy"/>   
+		<set-next-rule methodname="addChildMenuFour" />
+	</pattern>
+
+	<pattern value="menu/page">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.Page" />
+		<set-properties-rule/> 
+		<set-next-rule methodname="addPageList" />
+	</pattern>
+	<pattern value="menu/page/button">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.Button" />
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" /> 
+			<alias attr-name="name" prop-name="name" /> 
+		</set-properties-rule> 
+		<set-next-rule methodname="addButtonList" />
+	</pattern>
+	
+	 
+	<pattern value="menu/portals">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.Portals" /> 
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" /> 
+			<alias attr-name="columnNo" prop-name="columnNo" /> 
+		</set-properties-rule> 
+		<bean-property-setter-rule pattern="columnWidth"/> 
+		<bean-property-setter-rule pattern="width"/> 
+		<bean-property-setter-rule pattern="style"/> 
+		<set-next-rule methodname="addPortalsList" />
+	</pattern>
+	
+	<pattern value="menu/portals/portal">
+		<object-create-rule classname="com.ods.base.bo.menu.xml.Portal" /> 
+		<set-properties-rule>
+			<alias attr-name="id" prop-name="id" /> 
+			<alias attr-name="title" prop-name="title" /> 
+		</set-properties-rule>  
+		<bean-property-setter-rule pattern="height"/>  
+		<bean-property-setter-rule pattern="url"/>   
+		<bean-property-setter-rule pattern="orderBy"/>  
+		<set-next-rule methodname="addPortalList" />
+	</pattern>
+
+</digester-rules>

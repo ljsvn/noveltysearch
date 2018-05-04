@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileImports>
+	<fileImport id="addresslistImportId" name="通讯录导入">
+		<!-- 数据开始的行数 -->
+		<startRow>3</startRow>
+		<columnSum>8</columnSum>
+		<!-- 导入数据检测规则 -->
+		<!-- // 校验值规则值 notnull：表示非空,int：表示是整数,long:表示是长整数,double:表示是浮点数, 例如：列号,notnull-int|列号,int -->
+		<checkCellDataRule>1,notnull|2,notnull|3,null|4,notnull|5,null|6,null|7,notnull|8,null
+		</checkCellDataRule>
+	</fileImport>
+	<fileImport id="searchResultImportId" name="检索结果导入">
+		<!-- 数据开始的行数 -->
+		<startRow>3</startRow>
+		<columnSum>3</columnSum>
+		<!-- 导入数据检测规则 -->
+		<!-- // 校验值规则值 notnull：表示非空,int：表示是整数,long:表示是长整数,double:表示是浮点数, 例如：列号,notnull-int|列号,int -->
+		<checkCellDataRule>1,notnull
+		</checkCellDataRule>
+	</fileImport>
+	
+</fileImports>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.log.bo">
+	<class name="OperationLog" table="t_operation_log">
+		<id column="log_pk" name="logPk" type="string">
+			<generator class="guid" />
+		</id>
+		<property column="user_Pk" 		name="userPk" 	  type="string" />
+		<property column="user_name" 		name="userName" 	  type="string" />
+		<property column="first_org_pk" 		name="firstOrgPk" 	  type="string" />
+		<property column="action_content" 	name="actionContent"  type="string" />
+		<property column="action_ip" 	 	name="actionIp" 		type="string" />
+		<property column="create_time" 	 	name="createTime" 	  type="string" />
+	</class>
+</hibernate-mapping>

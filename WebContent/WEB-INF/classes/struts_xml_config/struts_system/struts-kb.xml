@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts> 
+	<!-- 知识点类型 -->
+	<package name="kbtype" namespace="/kb/type" extends="definepackage">
+		<!--点击开始菜单的知识点类型列表，跳转页面-->
+		<action name="kbtype_list">
+			<result>/jsp/kb/kbtype/kb_type_list.jsp</result>
+		</action>
+		<!--进入知识点类型新增，修改，查看,列表页面-->
+		<action name="kbtype_page_*" class="com.ods.kb.action.kbtype.KbtypeAction" method="{1}">
+			<result name="addPage">/jsp/kb/kbtype/kb_type_add.jsp</result>
+			<result name="updatePage">/jsp/kb/kbtype/kb_type_update.jsp</result>
+			<result name="viewPage">/jsp/kb/kbtype/kb_type_view.jsp</result>
+			<result name="gridPage">/jsp/common/grid.jsp</result>
+		</action> 
+		<!-- 知识点类型增,删，改-->
+		<action name="kbtypeCUD_*" class="com.ods.kb.action.kbtype.KbtypeAction" method="{1}">
+			<result name="success">/jsp/kb/kbtype/kb_type_success.jsp</result>
+			<result name="error">/jsp/kb/kbtype/kb_type_error.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 知识点内容CURD 与搜索 -->
+	<package name="kbcontent" namespace="/kb/content" extends="definepackage">
+		<!--点击开始菜单的知识点内容录入列表，跳转页面-->
+		<action name="kbcontent_list">
+			<result>/jsp/kb/content/kb_content_list.jsp</result>
+		</action>
+		<!--进入知识点新增，修改，查看,列表树页面-->
+		<action name="kbcontent_page_*" class="com.ods.kb.action.kbcontent.KbcontentAction" method="{1}">
+			<result name="addPage">/jsp/kb/content/kb_content_add.jsp</result>
+			<result name="updatePage">/jsp/kb/content/kb_content_update.jsp</result>
+			<result name="fastupdatePage">/jsp/kb/content/kb_type_fastupdate.jsp</result>
+			<result name="viewPage">/jsp/kb/content/kb_content_view.jsp</result>
+			<result name="treePage">/jsp/kb/content/kb_tree.jsp</result>
+		</action>
+		<!--进入知识点新增，修改，查看,列表树页面-->
+		<action name="kbcounseling_page_*" class="com.ods.kb.action.kbcontent.KbcontentAction" method="{1}">
+			<result name="viewPage">/jsp/operation/workorder/handle/kbinfo/kb_counseling_view.jsp</result>
+		</action>
+		<action name="kbcontent_page_msg_viewPage" class="com.ods.kb.action.kbcontent.KbcontentAction" method="viewPage"> 
+			<result name="viewPage">/jsp/kb/content/kb_content_view.jsp</result> 
+		</action>
+		<!-- 知识点增,删，改-->
+		<action name="kbcontentCUD_*" class="com.ods.kb.action.kbcontent.KbcontentAction" method="{1}">
+			<result name="success">/jsp/kb/content/kbsuccess.jsp</result>
+			<result name="error">/jsp/kb/content/kberror.jsp</result>
+		</action>
+		<!-- 资料库搜索-->
+		<action name="kb_content_searchbyKey" class="com.ods.kb.action.kbcontent.KbcontentAction" method="searchKbInfo" >
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 资料库回单信息入库保存--> 
+		<action name="back_stocking_add" class="com.ods.kb.action.kbcontent.KbcontentAction" method="saveStocking">
+			<result name="success">/jsp/kb/content/kbsuccess.jsp</result>
+			<result name="error">/jsp/kb/content/kberror.jsp</result>
+		</action>
+		<!-- 资料库编码异步验证--> 
+		<action name="validkbInfoCode" class="com.ods.kb.action.kbcontent.KbcontentAction" method="validkbInfoCode">
+			<result name="success">/jsp/kb/content/kbsuccess.jsp</result>
+			<result name="error">/jsp/kb/content/kberror.jsp</result>
+		</action>
+		<!-- 资料库名称异步验证--> 
+		<action name="validkbInfoName" class="com.ods.kb.action.kbcontent.KbcontentAction" method="validkbInfoName">
+			<result name="success">/jsp/kb/content/kbsuccess.jsp</result>
+			<result name="error">/jsp/kb/content/kberror.jsp</result>
+		</action>
+		<!-- 资料库添加关联知识点树--> 
+		<action name="kbtreeView">
+			<result>/jsp/kb/content/kb_treeView.jsp</result>
+		</action>
+		<!-- 进入查看关联知识点信息列表页面--> 
+		<action name="linkKbPage">
+			<result>/jsp/kb/content/kb_linkKbPage.jsp</result>
+		</action>
+		
+		<!-- 获取列表信息关联知识点信息--> 
+		<action name="linkKbGrid" class="com.ods.kb.action.kbcontent.KbcontentAction" method="linkKbGrid">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 查看资料库内容--> 
+		<action name="select_kb_info_counseling" class="com.ods.kb.action.kbcontent.KbcontentAction" method="selectKbInfoCounseling">
+			<result name="success">/jsp/kb/content/kbsuccess.jsp</result>
+			<result name="error">/jsp/kb/content/kberror.jsp</result>
+		</action>
+		<!-- 上传知识库内容的图片 -->
+		<action name="upload_image_info" class="com.ods.kb.action.kbcontent.KbcontentAction" method="uploadImageInfo">
+			<!-- 配置fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件大小 -->
+				<param name="maximumSize">5242880</param> 
+			</interceptor-ref> 
+			<interceptor-ref name="defaultStack"/>
+			<result name="input">/jsp/kb/content/file_upload_error.jsp</result>
+			<result name="success">/jsp/kb/content/kb_image_upload.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	<!-- 资料库目录-->
+	<package name="kbdir" namespace="/kb/dir" extends="definepackage">
+		<!--点击开始菜单的资料库目录，跳转到列表页面-->
+		<action name="kb_list_page">
+			<result>/jsp/kb/kbdir/kb_dir_main.jsp</result>
+		</action>
+		
+		<!--资料库目录树型结构信息组织-->
+		<action name="load_tree_Info" class="com.ods.kb.action.kbdir.KbdirAction" method="loadTreeInfo">
+			<result name="success">/jsp/kb/kbdir/dir_tree.jsp</result>
+			<result name="error">/jsp/kb/kbdir/kb_dir_error.jsp</result>
+		</action>
+		
+		<!--转向资料库目录新增页面-->
+		<action name="diraddpage"  class="com.ods.kb.action.kbdir.KbdirAction" method="dirAddPage">
+			<result>/jsp/kb/kbdir/kb_dir_add.jsp</result>
+		</action>
+		
+		<!--转向资料库目录查看页面-->
+		<action name="dirviewpage"  class="com.ods.kb.action.kbdir.KbdirAction" method="dirViewPage">
+			<result>/jsp/kb/kbdir/kb_dir_view.jsp</result>
+		</action>
+		
+		<!--转向资料库目录修改页面-->
+		<action name="dirupdatepage"  class="com.ods.kb.action.kbdir.KbdirAction" method="dirUpdatePage">
+			<result>/jsp/kb/kbdir/kb_dir_update.jsp</result>
+		</action>
+		
+		<!--保存资料库目录-->
+		<action name="dir_add"  class="com.ods.kb.action.kbdir.KbdirAction" method="addDirInfo">
+			<result name="success">/jsp/kb/kbdir/kb_dir_success.jsp</result>
+			<result name="error">/jsp/kb/kbdir/kb_dir_error.jsp</result>
+		</action>
+		
+		<!--删除资料库目录-->
+		<action name="dir_del"  class="com.ods.kb.action.kbdir.KbdirAction" method="delDirInfo">
+			<result name="success">/jsp/kb/kbdir/kb_dir_success.jsp</result>
+			<result name="error">/jsp/kb/kbdir/kb_dir_error.jsp</result>
+		</action>
+		
+		<!--修改资料库目录-->
+		<action name="dir_update"  class="com.ods.kb.action.kbdir.KbdirAction" method="updateDirInfo">
+			<result name="success">/jsp/kb/kbdir/kb_dir_success.jsp</result>
+			<result name="error">/jsp/kb/kbdir/kb_dir_error.jsp</result>
+		</action>
+	</package>
+	
+	<!--资料库查询-->
+	<package name="kbcontentquery" namespace="/kbcontent/query" extends="definepackage">
+		<!--点击开始菜单的知识点内容录入列表，跳转页面-->
+		<action name="kbcontent_query">
+			<result>/jsp/kb/content/kb_content_query.jsp</result>
+		</action>
+	</package>
+</struts>

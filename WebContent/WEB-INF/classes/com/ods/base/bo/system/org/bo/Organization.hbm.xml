@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.org.bo">
+	<class name="Organization" table="t_organization">
+		<id column="org_pk" name="orgPk" type="string" unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="father_org_pk" name="fatherOrgPk" type="string" />
+		<property column="first_org_pk" name="firstOrgPk" type="string" />
+		<property column="father_org_pk_all" name="fatherOrgPkAll" type="string" />
+		<property column="org_name" name="orgName" type="string" />
+		<property column="org_name_short" name="orgNameShort" type="string" />
+		<property column="org_type" name="orgType" type="string" />
+		<property column="first_alphabet" name="firstAlphabet" type="string" />
+		<property column="full_alphabet" name="fullAlphabet" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+		<property column="node_orderby" name="nodeOrderby" type="int" />
+		<property column="org_classify" name="orgClassify" type="int" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.role.bo">
+	<class name="RolePortal" table="t_role_portal">
+		<id column="role_portal_pk" name="rolePortalPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="portals_id" name="portalsId" type="string" />
+		<property column="portal_id" name="portalId" type="string" />
+		<property column="protals_columnNo" name="protalsColumnNo" type="int" />
+		<property column="protal_order" name="protalOrder" type="int" />
+		<property column="role_pk" name="rolePk" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<menuone id="testnightly" name="test_nightly">
+		<url>#</url>
+		<orderBy>11</orderBy>
+		<childmenutwo id="testnightly|testnightly_1" name="测试摄像头" colorFont="摄像头" color="green">
+			<url>test/camera/index_page.ods</url>
+			<orderBy>1</orderBy>
+		</childmenutwo>
+		<childmenutwo id="testnightly|testnightly_2" name="测试摄像头" colorFont="摄像头" color="green">
+			<url>test/thme/index_page.ods</url>
+			<orderBy>2</orderBy>
+		</childmenutwo>
+		<childmenutwo id="lawclassfilemanage" name="文件库" leaf="true"> >
+	        <url>system/filemanage/index_page.ods</url>
+	        <orderBy>3</orderBy>  
+        </childmenutwo>
+
+	</menuone>
+</menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--MenuOperation表的映射文件-->
+<hibernate-mapping package="com.ods.base.bo.menu">
+	<class name="MenuModual" table="v_user_menu_modual">
+		<id column="menu_modual_pk" name="menuModualPk" type="string" unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="user_pk" 			name="userPk" 			type="string" />
+		<property column="role_pk" 			name="rolePk" 			type="string" />
+		<property column="menu_id_one" 		name="menuIdOne" 		type="string" /> 
+	</class>
+</hibernate-mapping>

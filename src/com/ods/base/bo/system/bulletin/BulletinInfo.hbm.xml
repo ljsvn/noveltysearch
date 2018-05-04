@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.bulletin">
+	<class name="BulletinInfo" table="t_bulletin_info">
+		<id column="bulletin_pk" name="bulletinPk"  type="string"  unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="send_type" name="sendType" type="int" />
+		<property column="bulletin_title" name="bulletinTitle" type="string" />
+		<property column="img_path" name="imgPath" type="string" />
+		<property column="file_path" name="filePath" type="string" />
+		<property column="file_name" name="fileName" type="string" />
+		<property column="bulletin_note" name="bulletinNote" type="string" />
+		<property column="bulletin_type" name="bulletinType" type="string" />
+		<property column="is_draft" name="isDraft" type="int" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+		<property column="create_time" name="createTime" type="string" />
+	</class>
+</hibernate-mapping>

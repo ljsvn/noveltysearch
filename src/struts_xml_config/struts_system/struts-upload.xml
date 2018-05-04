@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+
+	<package name="fileUpLoad" namespace="/main/file/fileUpLoad" extends="definepackage">
+		<!--进入通讯录主页面-->
+		<action name="addre_upload_list"> 
+			<result>/jsp/addr/loadexcel/addre_upload_list.jsp</result>
+		</action>
+		<!--进入BOSS文件上传主页面-->
+		<action name="fileUpLoad_list"> 
+			<result>/jsp/addr/loadexcel/fileUpLoad_list.jsp</result>
+		</action>
+		<!--进入通讯录新增，修改，查看,列表树页面-->
+		<action name="fileUpLoad_listInfo" class="com.ods.addresslist.action.adresslistinfo.AdresslistAction" method="{1}">
+			<!-- 添加联系人页面 -->
+			<result name="addPage">/jsp/addr/list/adresslist_add.jsp</result>
+			<!-- 修改联系人页面-->
+			<result name="updatePage">/jsp/addr/list/adresslist_update.jsp</result>
+			<!-- 查看详细联系人页面-->
+			<result name="viewLinkManPage">/jsp/addr/list/adresslist_view.jsp</result>
+			<!--进入私有的分组显示联系人页面-->
+			<result name="viewTeamPage">/jsp/addr/list/adresslist_view.jsp</result>
+			<!--进入公用通讯录页面-->
+			<result name="viewPage">/jsp/addr/list/adresslist_view.jsp</result>
+			<!--通讯录主页面树 -->
+			<result name="treePage">/jsp/addr/list/adresslist_tree.jsp</result>
+		</action>
+		<!-- 执行通讯录增,删，改，查-->
+		<action name="fileUpLoad_listInfo" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+			<result name="error">/jsp/addr/list/adresslist_error.jsp</result>
+		</action>
+		<!--判断下载文件是否存在-->
+		<action name="file_cleck_file" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="fileCleckFile">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+
+		</action>
+		<!--下载文件-->
+		<action name="file_download" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="fileDownload">
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<action name="load_excel">
+			<result name="success">/jsp/addr/loadexcel/load_excel.jsp</result>
+		</action>
+		<!--判断下载文件是否存在-->
+		<action name="loadlist_upload_save" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="uploadSave">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="fileType">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!--判断下载文件是否存在-->
+		<action name="error_view" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="errorView">
+			<result name="success">/jsp/addr/loadexcel/file_upload_error.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<action name="file_del" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="delInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<action name="load_help">
+			<result name="success">/jsp/addr/loadexcel/load_file_help.jsp</result>
+		</action>
+		<action name="loadlist_upload_valid_save" class="com.ods.fileuploadinfo.action.FileUploadInfoAction" method="uploadValid">
+			<result name="error">/jsp/rbac/user/usermanage/valid_error.jsp</result>
+			<result name="success">/jsp/rbac/user/usermanage/valid_success.jsp</result>
+		</action>
+	</package>
+
+	<package name="file_uploadimg" namespace="/file/uploadimg" extends="definepackage">
+		<action name="upload_page"> 
+			<result>/jsp/public/file_upload.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 文件上传 -->
+	<package name="file_upload" namespace="/file/upload" extends="definepackage">
+        <!-- 文件上传的公用页面 -->
+        <action name="index_page">
+            <result>/jsp/upload/file_upload.jsp</result>
+        </action>
+        <!-- 文件上传的公用页面 -->
+        <action name="index_page_time">
+            <result>/jsp/upload/file_upload_time.jsp</result>
+        </action>
+        <!-- 上传文件 -->
+        <action name="upload_info" class="com.ods.base.action.upload.FileUploadAction" method="uploadInfo">
+            <!-- 配置fileUpload的拦截器 -->
+            <interceptor-ref name="fileUpload"/>  
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">/jsp/resultsMessage/file_upload_error.jsp</result>
+            <result name="success">/jsp/resultsMessage/file_upload_success.jsp</result>
+            <result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+        </action>
+        <!-- 上传文件 -->
+        <action name="upload_info_time" class="com.ods.base.action.upload.FileUploadAction" method="uploadInfoTime">
+            <!-- 配置fileUpload的拦截器 -->
+            <interceptor-ref name="fileUpload"/> 
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">/jsp/resultsMessage/file_upload_error.jsp</result>
+            <result name="success">/jsp/resultsMessage/file_upload_success.jsp</result>
+            <result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+        </action>
+		<!-- 文件验证-->
+		<action name="file_check" class="com.ods.base.action.upload.FileUploadAction" method="fileCheck">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 文件下载-->
+		<action name="file_download" class="com.ods.base.action.upload.FileUploadAction" method="fileDownload">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+</struts>

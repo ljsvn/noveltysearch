@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.bulletin">
+	<class name="BulletinViewInfo" table="v_bulletin_view_info">
+		<id column="view_pk" name="viewPk"  type="string"  unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="bulletin_pk" name="bulletinPk" type="string" />
+		<property column="send_type" name="sendType" type="int" />
+		<property column="bulletin_title" name="bulletinTitle" type="string" />
+		<property column="img_path" name="imgPath" type="string" />
+		<property column="file_path" name="filePath" type="string" />
+		<property column="file_name" name="fileName" type="string" />
+		<property column="bulletin_note" name="bulletinNote" type="string" />
+		<property column="bulletin_type" name="bulletinType" type="string" />
+		<property column="is_draft" name="isDraft" type="int" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="receive_pk" name="receivePk" type="string" />
+		<property column="user_pk" name="userPk" type="string" />
+		<property column="user_name" name="userName" type="string" />
+		<property column="bulletin_isread" name="bulletinIsread" type="int" />
+		<property column="receive_org_pk" name="receiveOrgPk" type="string" />
+		<property column="receive_user_pk" name="receiveUserPk" type="string" />
+		<property column="receive_delete_type" name="receiveDeleteType" type="int" />
+		<property column="receive_create_time" name="receiveCreateTime" type="string" />
+	</class>
+</hibernate-mapping>

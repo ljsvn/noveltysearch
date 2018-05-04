@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.ods.kb.bo.topkewords">
+	<class name="SearchRecord" table="t_search_record">
+		<id column="search_pk" name="searchPk" type="int" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property column="key_word" 		name="keyWord" 	        type="string" />
+		<property column="delete_type" 	 	 name="deleteType" 		type="int" />
+		<property column="create_user_pk" 	name="createUserPk" 		type="string" />
+		<property column="create_time" 		name="createTime" 		type="string" />
+	</class>
+</hibernate-mapping>
+

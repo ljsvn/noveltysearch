@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--表的映射文件 -->
+<hibernate-mapping package="com.ods.data.bo.searchresult">
+	<class name="SearchResult" table="t_search_result">
+		<id column="search_result_pk" name="searchResultPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="contract_pk" name="contractPk" type="string" />
+		<property column="search_result_name" name="searchResultName"
+			type="string" />
+		<property column="author" name="author" type="string" />
+		<property column="company" name="company" type="string" />
+		<property column="source" name="source" type="string" />
+		<property column="issn" name="issn" type="string" />
+		<property column="result_abstract" name="resultAbstract"
+			type="string" />
+		<property column="keyword" name="keyword" type="string" />
+		<property column="result_class" name="resultClass" type="string" />
+		<property column="retain1" name="retain1" type="string" />
+		<property column="retain2" name="retain2" type="string" />
+		<property column="retain3" name="retain3" type="string" />
+		<property column="retain4" name="retain4" type="string" />
+		<property column="retain5" name="retain5" type="string" />
+		<property column="retain6" name="retain6" type="string" />
+		<property column="retain7" name="retain7" type="string" />
+		<property column="order_no" name="orderNo" type="int" />
+		<property column="memo" name="memo" type="string" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

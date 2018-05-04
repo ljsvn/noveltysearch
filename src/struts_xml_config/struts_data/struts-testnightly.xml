@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<!--测试打印-->
+	<package name="test_camera" namespace="/test/camera" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/print/printmain.jsp</result>
+		</action>	
+	</package>
+	
+	<!--测试主题-->
+	<package name="test_thme" namespace="/test/thme" extends="definepackage">
+		<!-- 进入主页 -->
+		<action name="index_page">
+			<result>/jsp/test/thme.jsp</result>
+		</action>	
+	</package>
+</struts>

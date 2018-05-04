@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!--文件上传大小限制 -->
+	<constant name="struts.multipart.maxSize" value="105418757" />
+	<!--监听包定义 -->
+	<package name="definepackage" namespace="/definepackage" extends="struts-default">
+		<interceptors>  
+			<interceptor-stack name="interceptorStack">  
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="token"/>   
+			</interceptor-stack>  
+		</interceptors>  
+	</package>
+	
+	<!-- 缺省包的设置 -->
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="index" class="com.ods.base.action.system.login.LoginAction"	method="indexPage">
+			<result  name="success">/jsp/login/login.jsp</result>
+		</action>
+		<action name="nosession">
+			<result>/jsp/common/error/nosession.jsp</result>
+		</action>
+	</package>
+	<package name="login" namespace="/main" extends="struts-default">
+		<action name="login" class="com.ods.base.action.system.login.LoginAction"	method="userLogin"> 
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error" >/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<action name="frame" class="com.ods.base.action.system.login.LoginAction">
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="token"/> 
+			<result name="invalid.token" >/jsp/main/index.jsp</result>  
+			<result name="input" >/jsp/main/index.jsp</result>
+			<result name="success">/jsp/main/index.jsp</result>
+		</action> 
+		<action name="mainTopMenu" class="com.ods.main.action.MainMenuAction" method="mainTopMenu">
+			<result name="success">/jsp/main/main_top.jsp</result>
+			<result name="error" >/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!--左边权限菜单-->
+		<action name="mainLeftMenu" class="com.ods.main.action.SecondMenuAction" method="mainLeftMenu">
+			<result name="success">/jsp/resultsMessage/tree_info.jsp</result>
+			<result name="error" >/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入中部内容 -->
+		<action name="index_page">
+			<result>/jsp/main/tabpanel_content.jsp</result>
+		</action>
+		<!-- 系统登录退出 -->
+		<action name="closeBrowser" class="com.ods.base.action.system.login.LoginAction"	method="closeBrowser"> 
+			<result  name="success">/jsp/login/login.jsp</result>
+			<result name="error" >/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	<!-- 系统模块 -->
+	<include file="struts_xml_config/struts_system/struts_index.xml"/>
+	<!-- 业务模块 -->
+	<include file="struts_xml_config/struts_data/struts_index.xml"/>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--t_execl_file_import_info表的映射文件 -->
+<hibernate-mapping package="com.ods.base.bo.system.excelfileimport">
+	<class name="ExeclFileImportInfo" table="t_execl_file_import_info">
+		<id column="execl_file_import_pk" name="execlFileImportPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="execl_file_import_type_id" name="execlFileImportTypeId"
+			type="string" />
+		<property column="execl_file_name" name="execlFileName" type="string" /> 
+		<property column="execl_file_path" name="execlFilePath" type="string" />
+		<property column="execl_file_import_error_content" name="execlFileImportErrorContent"
+			type="string" />
+		<property column="import_file_method" name="importFileMethod" type="int" />
+		<property column="first_org_pk" name="firstOrgPk" type="string" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+
+	</class>
+</hibernate-mapping>

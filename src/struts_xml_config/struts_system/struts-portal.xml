@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+
+	<package name="portalshow" namespace="/portal/show" extends="definepackage"> 
+		<action name="homePagePoratl" class="com.ods.base.action.portal.HomePagePortalAction" method="homePagePoratl">
+			<result name="success">/jsp/portal/index_portal.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package> 
+	
+</struts>

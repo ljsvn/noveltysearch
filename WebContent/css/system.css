@@ -1,0 +1,655 @@
+/*
+主题名称: Ods信息技术软件有限公司-项目名称：cati调查问卷管理系统
+URI: 
+描述: Cati通用样式
+作者: 蒲小龙 
+版本: 1.0
+创建时间：2009-6-8 下午04:22:36 
+Ods信息技术软件有限公司
+
+[目录表] 
+
+	0- Reset
+	1- Global
+	2- Links
+	3- Headings
+	4- Header 
+	5- Navigation
+	6- Middle 
+	7- Forms
+	8- Extras
+	9- Footer 
+
+*/ /* =0 Reset
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+	/* =1 Global
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/*颜色预警*/
+.early-warning1 {
+    background-color: red;
+}
+.early-warning2 {
+    background-color: #FF8C00;
+}
+.early-warning3 {
+    background-color: #4169E1;
+}
+.early-warning4 {
+    background-color: green;
+}
+.early-warning5 {
+    background-color: #556B2F;
+}
+a:hover {
+    text-decoration:underline;
+}
+a:LINK {
+	text-decoration: none;
+}
+
+.x-panel-resize {
+        height:5px;
+        background:transparent url(../image/panel-handle.gif) no-repeat center bottom;
+        position:relative;
+        left:0;
+        top:2px;
+        cursor:n-resize;
+        cursor:row-resize;
+        /* for IE */
+        font-size:1px;
+        line-height:1px;
+        overflow:hidden;
+}
+.x-desktop-app img{
+	background-image:url(../image/icon/grid48x48.png);
+	height:48px;
+	width:48px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../image/icon/grid48x48.png', sizingMethod='scale');
+}
+.x-icon-reset-password {
+	background-image:url(../image/icon/resetpassword.gif) !important;
+}
+.x-icon-delete {
+	background-image:url(../image/icon/delete.png) !important;
+}
+.x-icon-printer {
+	background-image:url(../image/icon/printer.png) !important;
+}
+.x-icon-generator{
+	background-image:url(../image/icon/pencil_go.png) !important;
+}
+.x-icon-edit {
+	background-image:url(../image/icon/edit.png) !important;
+}
+.x-icon-add {
+	background-image:url(../image/icon/add.png) !important;
+}
+.x-icon-save {
+	background-image:url(../image/icon/save.gif) !important;
+}
+.x-icon-add-catalog {
+	background-image:url(../image/icon/add.png) !important;
+}
+.x-icon-add-product {
+	background-image:url(../image/icon/add.png) !important;
+}
+.x-icon-oper-handle {
+	background-image:url(../image/icon/oper_handle.png) !important;
+}
+.x-icon-oper-all {
+	background-image:url(../image/icon/oper_all.png) !important;
+}
+.x-icon-oper-end {
+	background-image:url(../image/icon/oper_end.png) !important;
+}
+
+.x-icon-excel {
+	background-image:url(../image/icon/page_white_excel.png) !important;
+}
+
+
+/*?*/
+.x-icon-oper-no {
+	background-image:url(../image/icon/oper_no.png) !important;
+}
+.menu-kb-back {
+	background-image: url( ../image/kb/kbback.gif ) !important;
+}
+.x-icon-view {
+	background-image:url(../image/icon/view.png) !important;
+}
+.x-icon-search {
+	background-image:url(../image/icon/search.png) !important;
+}
+/*相关人员*/
+.x-icon-user {
+	background-image:url(../image/icon/icon_user.png) !important;
+}
+/*相关物品*/
+.x-icon-things{
+	background-image:url(../image/icon/things.png) !important;
+}
+/*抓获嫌疑人*/
+.x-icon-case {
+	background-image:url(../image/icon/case.png) !important;
+}
+/*缴获赃物*/
+.x-icon-loot{
+	background-image:url(../image/icon/loot.png) !important;
+}
+/*破案信息*/
+.x-icon-caseinfo{
+	background-image:url(../image/icon/caseinfo.png) !important;
+}
+/*选择*/
+.x-icon-select {
+	background-image:url(../image/icon/select.gif) !important;
+}
+/*审批*/
+.x-icon-vcardEdit {
+	background-image:url(../image/icon/vcard_edit.png) !important;
+}
+/*查看线索相关人员信息*/
+.x-icon-seachUser {
+	background-image:url(../image/icon/seachUser.png) !important;
+}
+/*查看线索相关物品信息*/
+.x-icon-seachThings {
+	background-image:url(../image/icon/seachThings.png) !important;
+}
+/*系统评分*/
+.x-icon-monitorEdit {
+	background-image:url(../image/icon/monitor_edit.png) !important;
+}
+/*刑嫌住宿酒店信息*/
+.x-icon-hotel {
+	background-image:url(../image/icon/home.gif) !important;
+}
+/*刑嫌执法单位询问信息*/
+.x-icon-question {
+	background-image:url(../image/icon/question.png) !important;
+}
+/*刑嫌住院动态信息*/
+.x-icon-hospital {
+	background-image:url(../image/icon/hospital.png) !important;
+}
+/*刑嫌乘飞机动态信息*/
+.x-icon-airplane {
+	background-image:url(../image/icon/airplane.gif) !important;
+}
+.x-icon-pdf {
+	background-image:url(../image/icon/page_white_pdf.png) !important;
+}
+.x-icon-word {
+	background-image:url(../image/icon/page_white_word.png) !important;
+}
+.icon-expand-all {
+	background-image:url(../image/icon/expand-all.gif) !important;
+}
+.icon-collapse-all {
+	background-image:url(../image/icon/collapse-all.gif) !important;	
+}
+.x-icon-refresh {
+	background-image:url(../image/icon/arrow_refresh.png) !important;		
+}
+.x-icon-docs {
+	background-image:url(../image/icon/docs.gif) !important;		
+}
+.x-icon-bin {
+	background-image:url(../image/icon/bin.png) !important;		
+}
+.x-icon-undo {
+	background-image:url(../image/icon/arrow_undo.png) !important;		
+}
+.x-icon-index-edit {
+	background-image:url(../image/icon/index_edit.png) !important;		
+}
+.x-icon-index-optimize {
+	background-image:url(../image/icon/index_optimize.png) !important;		
+}
+.x-icon-stocking {
+	background-image:url(../image/icon/door_in.png) !important;		
+}
+.x-icon-zrw {
+	background-image:url(../image/icon/advic-worked.png) !important;
+}
+.x-icon-checkUp {
+	background-image:url(../image/icon/monitor_edit.png) !important;
+}
+.x-icon-task {
+	background-image:url(../image/icon/task.png) !important;
+}
+.x-icon-alleg {
+	background-image:url(../image/icon/alleg.png) !important;
+}
+.x-icon-visited {
+	background-image:url(../image/icon/visited.png) !important;
+}
+.x-icon-notvisit {
+	background-image:url(../image/icon/notvisit.png) !important;
+}
+.x-icon-notallot {
+	background-image:url(../image/icon/notallot.png) !important;
+}
+.x-icon-allot {
+	background-image:url(../image/icon/allot.png) !important;
+}
+.x-icon-reallot {
+	background-image:url(../image/icon/reallot.png) !important;
+}
+.x-icon-max {
+	background-image:url(../image/icon/max.png) !important;
+}
+.x-icon-min {
+	background-image:url(../image/icon/min.png) !important;
+}
+.x-icon-revert {
+	background-image:url(../image/icon/revert.png) !important;
+}
+.x-icon-close {
+	background-image:url(../image/icon/close.png) !important;
+}
+.menu-kb {
+	background-image: url( ../image/kb/kb.gif ) !important;
+}
+.example-info{
+	width:150px;
+	border:1px solid #c3daf9;
+	border-top:1px solid #DCEAFB;
+	border-left:1px solid #DCEAFB;
+	background:#ecf5fe url( ../image/info-bg.gif ) repeat-x;
+	font-size:10px;
+	padding:8px;
+}
+
+
+.msg .x-box-mc {
+    font-size:14px;
+}
+#msg-div {
+    position:absolute;
+    left:35%;
+    top:10px;
+    width:250px;
+    z-index:20000;
+}
+
+/*
+ * FileUploadField component styles
+ */
+.x-form-file-wrap {
+    position: relative;
+    height: 22px;
+}
+.x-form-file-wrap .x-form-file {
+	position: absolute;
+	right: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+    height: 22px;
+}
+.x-form-file-wrap .x-form-file-btn {
+	position: absolute;
+	right: 0;
+	z-index: 1;
+}
+.x-form-file-wrap .x-form-file-text {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    color: #777;
+}
+
+.ux-explorerview-item {
+	float: left; display: block; border: none;
+}
+
+
+.ux-mselect{
+    overflow:auto;
+    background:white;
+    position:relative; /* for calculating scroll offsets */
+    zoom:1;
+    overflow:auto;	
+}
+.ux-mselect-item{
+    font:normal 15px tahoma, arial, helvetica, sans-serif;
+    padding:2px;
+    border:1px solid #fff;
+    white-space: nowrap;
+    cursor:pointer;
+}
+.ux-mselect-selected{
+	border:1px dotted #a3bae9 !important;
+    background:#DFE8F6;
+    cursor:pointer;
+}
+
+.x-view-drag-insert-above { 
+    border-top:1px dotted #3366cc; 
+} 
+.x-view-drag-insert-below { 
+    border-bottom:1px dotted #3366cc; 
+} 
+
+
+/* Tiles */
+.ux-explorerview-tiles-item { width: 180px; height: 48px; margin: 5px 0 0 5px; -moz-user-select: none; }
+.ux-explorerview-tiles-item .ux-explorerview-icon { float: left; width: 50px; height: 50px; }
+.ux-explorerview-tiles-item .ux-explorerview-text { float: left; width: 120px; padding-top: 8px; white-space: nowrap; overflow: hidden; }
+.ux-explorerview-tiles-item .ux-explorerview-text span { color: #777; }
+.ux-explorerview-folder img { 
+	background-image:url(../image/icon/medium-folder.gif); 	
+	height:48px;
+	width:48px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../image/icon/medium-folder.gif', sizingMethod='scale');
+}
+
+.x-bubble-ml {
+    padding-left:4px;
+	background:transparent url(../image/bubble-lr.gif) repeat-y 0 0;
+	zoom:1;
+}
+
+.x-bubble-mr {
+    padding-right:4px;
+	background:transparent url(../image/bubble-lr.gif) repeat-y right 0;
+	zoom:1;
+}
+.x-bubble-mc {
+	background:#fff;
+	overflow:hidden;
+}
+
+.x-bubble-tl {
+    
+    background: #fff url(../image/bubble-cs.gif) no-repeat 0 0;
+    padding-left:15px;
+    zoom:1;
+}
+.x-bubble-tr {
+    background: transparent url(../image/bubble-cs.gif) no-repeat right top;
+    padding-right:15px;
+    zoom:1;
+}
+.x-bubble-tc {
+    height: 9px;
+    overflow: hidden;
+    padding-top: 4px;
+    background: #fff url(../image/bubble-tb.gif) repeat-x 0 0;
+}
+
+.x-bubble-bl {
+	background: #fff url(../image/bubble-cs.gif) no-repeat 0 bottom;
+	padding-left:15px;
+    zoom:1;
+}
+.x-bubble-br {
+	background: transparent url(../image/bubble-cs.gif) no-repeat right bottom;
+	padding-right:15px;
+    zoom:1;
+}
+.x-bubble-bc {
+	height:15px;
+	font-size:1px;
+	line-height:1px;
+	overflow:hidden;
+	background: #fff url(../image/bubble-tb.gif) repeat-x 0 bottom;
+}
+.x-bubble-bwrap {	
+	background: #fff url(../image/bubble-tb.gif) repeat-x 0 0;
+	overflow:hidden;
+	zoom:1;
+
+}
+.x-bubble-body {
+	background: #fff;
+	overflow:hidden;
+}
+
+.upload-icon {
+    background: url('../image/icon/image_add.png') no-repeat 0 0 !important;
+}
+
+.search-item {
+	margin:5px 5px 9px;
+	padding:0 5px 10px 0;
+}
+
+.search-item .member {
+	font:bold 15px tahoma,arial,sans-serif;
+	color:#444;
+	margin:5px;
+	overflow:hidden;
+	white-space:nowrap;
+	zoom:1;
+}
+.body-wrap {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color: #222;
+	background-color:#FFFFFF;
+	margin: 0px;
+	padding: 10px;
+    position:relative;
+}
+.body-wrap {
+	width:95%;
+}
+.body-wrap .description p {
+   margin:8px 3px !important;
+}
+.body-wrap .description h4{
+	color:#083772;
+   border-bottom:1px dashed #ccc;
+   margin:8px 0;
+   padding-bottom:3px;
+}
+.body-wrap .description pre {
+	width : 500px;
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+} 
+.body-wrap, .body-wrap td, .body-wrap th {
+	font-size: 13px;
+}
+.body-wrap a {
+	color: #083772;
+}
+.body-wrap a:link {
+	color: #083772;
+	text-decoration: none;
+}
+
+.body-wrap a:visited {
+   color: #1e4e8f;
+	text-decoration: none;
+}
+
+.body-wrap a:hover {
+	text-decoration: underline;
+	color: #0000CC;
+}
+
+.body-wrap a:active {
+	text-decoration: none;
+	color: #1e4e8f;
+}
+
+/* Headings */
+.body-wrap h1, .body-wrap h2, .body-wrap h3, .body-wrap h4, .body-wrap h5, .body-wrap h6	{
+	font-family: "Trebuchet MS", "Bitstream Vera Sans", verdana, lucida, arial, helvetica, sans-serif;
+	font-weight: bold;
+	margin:3px 300px 3px 0;
+	letter-spacing: 1px;
+	width: 90%;
+}
+
+.body-wrap h1 {
+	font-size: 18px;
+}
+
+.body-wrap h2 {
+	font-weight: bold;
+	font-size: 15px;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+.body-wrap h3 {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.body-wrap h4 {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.body-wrap h5 {
+	font-size: 15px;
+}
+
+.body-wrap .label {
+	font-weight: bold;
+    padding:3px 15px 3px 0;
+    color:#333;
+}
+
+.body-wrap .hd-info {
+	color:#333;
+    padding:3px;
+}
+.body-wrap .hd-info a {
+
+}
+.body-wrap .description{
+	margin: 10px 0px;
+}
+
+.search-item .cls {
+	font:normal 15px tahoma,arial,sans-serif;
+	color:#444;
+	margin:5px;
+	overflow:hidden;
+	text-align:left;
+	white-space:nowrap;
+	zoom:1;
+}
+.search-item p {
+	font:normal 15px tahoma,arial,sans-serif;
+	clear:both;
+	margin: 0 5px 5px 28px;
+	color:#444;
+	zoom:1;
+}
+.item-icon {
+	height:16px;
+	margin-right:6px;
+	vertical-align:top;
+	width:16px;
+}
+.icon-cls {
+	background-image:url(../image/icon/class.gif) !important;
+}
+
+.loading-indicator {
+    font:bold 13px  Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    position:absolute;
+    top:35%;
+    left:43%;
+    color:#444;
+    background-image:url(resources/images/default/shared/large-loading.gif);
+    background-repeat: no-repeat;
+    background-position:left 5px;
+    padding:10px 10px 10px 38px;
+	text-align:left;
+}
+
+.kb_search_item_main {
+	border:1px solid;
+	margin-bottom:10px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:19px;
+	padding:5px 15px;
+}
+.kb_search_item_time {
+	padding:1px 5px 0;
+}
+.kb_search_item_main {
+	background-color:white;
+	border-color:#6B90DA;
+}
+.kb_search_item_main strong{
+	font-weight:bold;
+}
+.kb_search_item_main a {
+	color: #083772;
+}
+.kb_search_item_main a:link {
+	color: #083772;
+	text-decoration: none;
+}
+
+.kb_search_item_main a:visited {
+   color: #1e4e8f;
+	text-decoration: none;
+}
+
+.kb_search_item_main a:hover {
+	text-decoration: underline;
+	color: #0000CC;
+}
+
+.kb_search_item_main a:active {
+	text-decoration: none;
+	color: #1e4e8f;
+}
+.kb_search_item_main h3 {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+.kb_search_item_title {
+	margin-bottom:15px;
+}
+.kb_search_item_bottom {
+	padding:15px 0 15px 5px;
+}
+.kb_search_item_bottom li {
+	border-right:1px solid;
+	display:inline;
+	float:left;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0 10px 0 0;
+	padding-right:10px;
+}
+
+.kb_search_item_flag {
+	float: right;
+}
+.advic-worked {
+	background-image:url(../image/icon/advic-worked.png) !important;
+}
+.com-worked {
+	background-image:url(../image/icon/com-worked.png) !important;
+}
+
+.form_save {
+	background-image:url(image/form_save.gif) !important;
+}
+.form_reset {
+	background-image:url(image/form_reset.gif) !important;
+}
+.from_exit {
+	background-image:url(image/from_exit.gif) !important;
+}

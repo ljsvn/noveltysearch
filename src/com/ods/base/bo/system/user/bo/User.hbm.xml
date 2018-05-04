@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.user.bo">
+	<class name="User"  table="t_user">
+		<id column="user_pk" name="userPk"  type="string"  unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="parent_user_pk" name="parentUserPk" type="string" />
+		<property column="org_pk" name="orgPk" type="string" />
+		<property column="all_org_pk" name="allOrgPk" type="string" />
+		<property column="first_org_pk" name="firstOrgPk" type="string" />
+		<property column="user_login_name" name="userLoginName" type="string" />
+		<property column="user_real_name" name="userRealName" type="string" />
+		<property column="user_sex" name="userSex" type="string" />
+		<property column="user_duty_name" name="userDutyName" type="string" />
+		<property column="user_education" name="userEducation" type="string" />
+		<property column="user_birthday" name="userBirthday" type="string" />
+		<property column="user_native" name="userNative" type="string" />
+		<property column="user_phone" name="userPhone" type="string" />
+		<property column="is_system_user" name="isSystemUser" type="int" />
+		<property column="user_marital_status" name="userMaritalStatus" type="int" />
+		<property column="user_password" name="userPassword" type="string" />
+		<property column="before_login_time" name="beforeLoginTime" type="string" />
+		<property column="memo" name="memo" type="string" />
+		<property column="org_classify" name="orgClassify" type="int" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

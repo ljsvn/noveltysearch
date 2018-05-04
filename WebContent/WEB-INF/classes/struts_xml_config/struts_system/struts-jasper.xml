@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- jasper报表管理 -->
+	<package name="jaspermanager" namespace="/jasper" extends="definepackage">  
+		<!-- 进入报表管理通用action -->
+		<action name="index_page" class="com.ods.base.action.system.jasper.JasperAction" method="genernateJasperPage">
+			<result>/jsp/jasper/jasper_index.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<action name="index_page1" class="com.ods.base.action.system.jasper.JasperAction" method="genernateJasperPage">
+			<result>/jsp/jasper/jasper_index1.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入报表图型管理通用action -->
+		<action name="index_chart_page" class="com.ods.base.action.system.jasper.JasperAction" method="genernateJasperPage">
+			<result>/jsp/jasper/jasper_chart_index.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入报表下载action -->
+		<action name="downloadJasperFile" class="com.ods.base.action.system.jasper.JasperAction" method="downloadJasperFile">
+			<result>/jsp/jasper/report_download.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+</struts>

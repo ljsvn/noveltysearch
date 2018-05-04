@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<products>
+	<product>
+		<name>webTitle</name>
+		<value>欢迎使用火炸药技术科技查新平台</value>
+	</product>
+	<product>
+		<name>systemUseArea</name>
+		<value>西安市</value>
+	</product>
+	<product>
+		<name>dbType</name>
+		<value>sqlServer</value>
+	</product>
+	<product>
+		<name>dbBackupPath</name>
+		<value>C:/sumpolicedbBackup/</value>
+	</product>
+	<product>
+		<name>uploadPath</name>
+		<value>C:/sumpoliceFileImport/</value>
+	</product>
+	<product>
+		<name>openofficePort</name>
+		<value>18081</value>
+	</product>
+	<product>
+		<name>toSwfPath</name>
+		<value>C:/Program Files/SWFTools/</value>
+	</product>
+	<product>
+		<name>licenseKey</name>
+		<value>4b9c079562d1b494634675cc7080175b</value>
+	</product>
+	<product>
+		<name>licenseValue</name>
+		<value>f4a25aeb3fbc57b9dae889787b03c2a5</value>
+	</product>
+</products>

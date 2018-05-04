@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--表的映射文件 -->
+<hibernate-mapping package="com.ods.data.bo.contractsubject">
+	<class name="ContractSubject" table="t_contract_subject">
+		<id column="contract_subject_pk" name="contractSubjectPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="subject_class_pk" name="subjectClassPk"
+			type="string" />
+		<property column="contract_pk" name="contractPk"
+			type="string" />
+		<property column="subject_class_name" name="subjectClassName"
+			type="string" />
+		<property column="alias_name1" name="aliasName1" type="string" />
+		<property column="alias_name2" name="aliasName2" type="string" />
+		<property column="alias_name3" name="aliasName3" type="string" />
+		<property column="subject_class_ename" name="subjectClassEname"
+			type="string" />
+		<property column="alias_ename1" name="aliasEname1" type="string" />
+		<property column="alias_ename2" name="aliasEname2" type="string" />
+		<property column="alias_ename3" name="aliasEname3" type="string" />
+		<property column="alias_ename4" name="aliasEname4" type="string" />
+		<property column="alias_ename5" name="aliasEname5" type="string" />
+		<property column="retain1" name="retain1" type="string" />
+		<property column="retain2" name="retain2" type="string" />
+		<property column="is_key_word" name="isKeyWord" type="int" />
+		<property column="order_no" name="orderNo" type="int" />
+		<property column="memo" name="memo" type="string" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

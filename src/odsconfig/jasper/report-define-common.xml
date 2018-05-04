@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reports>
+	<common>
+		<query> 
+			<parameter name="page_no">
+				<vtype>int</vtype>
+				<type>hidden</type>
+				<value>1</value> 
+			</parameter>
+			<parameter name="page_row">
+				<vtype>int</vtype>
+				<type>hidden</type>
+				<value>50</value> 
+			</parameter> 
+			<parameter name="userPk">
+				<vtype>String</vtype>
+				<type>session</type>
+				<value></value> 
+			</parameter> 
+			<parameter name="userRealName">
+				<vtype>String</vtype>
+				<type>session</type>
+				<value></value> 
+			</parameter> 
+			<parameter name="orgPk">
+				<vtype>String</vtype>
+				<type>session</type>
+				<value></value> 
+			</parameter>
+			<parameter name="orgName">
+				<vtype>String</vtype>
+				<type>session</type>
+				<value></value> 
+			</parameter> 
+			<parameter name="allOrgPk">
+				<vtype>String</vtype>
+				<type>session</type>
+				<value></value> 
+			</parameter>  
+	 </query>
+	</common> 
+</reports>

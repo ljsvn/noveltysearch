@@ -1,0 +1,135 @@
+/*首页*/
+.firstPage {
+	background-image:url(../css/image/index.png) !important;
+}
+/*系统管理*/
+.system {
+	background-image: url(../css/image/system.png) !important;
+}
+/*密码修改*/
+.system_pass {
+	background-image: url(../css/image/system_pass.png) !important;
+}
+/*组织及用户管理*/
+.system_user{
+	background-image:url(../css/image/system_user.png) !important;
+}
+/*组织详细信息*/
+.system_orgdetail{
+	background-image:url(../css/image/sys_org_detail.png) !important;
+}
+/*系统权限管理*/
+.system_resource {
+	background-image: url(../css/image/system_resource.png) !important;
+}
+/*角色授权*/
+.system_resource_role {
+	background-image: url(../css/image/system_resource_role.png) !important;
+}
+/*用户授权*/
+.system_resource_userrole {
+	background-image: url(../css/image/system_resource_userrole.png) !important;
+}
+
+/*用户批量授权*/
+.system_resource_rolegroup {
+	background-image: url(../css/image/system_resource_rolegroup.png) !important;
+}
+
+/*特情考核加分制度*/
+.subject_class {
+	background-image: url(../css/image/system_special.gif) !important;
+}
+/*刑嫌考核加分制度*/
+.system_criminal {
+	background-image: url(../css/image/system_criminal.png) !important;
+}
+/*系统参数*/
+.system_dict {
+	background-image: url(../css/image/system_dict.png) !important;
+}
+/*服务类型码*/
+.system_special {
+	background-image: url(../css/image/system_serviceCode.png) !important;
+}
+/*日志管理*/
+.system_log {
+	background-image: url(../css/image/system_log.png) !important;
+}
+/*系统日志信息*/
+.system_log_info {
+	background-image: url(../css/image/system_log_info.png) !important;
+}
+/*系统日志删除*/
+.system_log_delete {
+	background-image: url(../css/image/system_log_delete.png) !important;
+}
+/******************************公告管理*******************************/
+.bulletin {
+	background-image: url(../css/image/bulletin.png) !important;
+}
+/*公告发布*/
+.bulletin_send {
+	background-image: url(../css/image/bulletin_send.png) !important;
+}
+/*已发公告*/
+.bulletin_done {
+	background-image: url(../css/image/bulletin_done.png) !important;
+}
+/*待阅公告*/
+.bulletin_waitread {
+	background-image: url(../css/image/bulletin_waitread.png) !important;
+}
+/*已阅公告*/
+.bulletin_receive {
+	background-image: url(../css/image/bulletin_receive.png) !important;
+}
+/*公告草稿*/
+.bulletin_draft {
+	background-image: url(../css/image/bulletin_draft.png) !important;
+}
+
+
+/***************************************查新工作****************************************************/
+
+.subjectclass {
+	background-image: url(../css/image/low.png) !important;
+}
+/*纲要*/
+.low_class {
+	background-image: url(../css/image/low_class.png) !important;
+}
+
+
+
+/***************************************资料库信息****************************************************/
+.kbfunc {
+	background-image: url(../css/image/kbfunc.png) !important;
+}
+/*资料库内容管理*/
+.kbfunc_kb_control_1{
+	background-image: url(../css/image/kbfunc_kb_control_1.png) !important;
+}
+/*资料库内容查询*/
+.kbfunc_kb_control_2{
+	background-image: url(../css/image/kbfunc_kb_control_2.png) !important;
+}
+/*资料库内容查询*/
+.kbfunc_kb_control_3 {
+	background-image: url(../css/image/kbfunc_kb_control_3.png) !important;
+}
+/*资料库内容类型*/
+.kbfunc_kb_control_4 {
+	background-image: url(../css/image/kbfunc_kb_control_4.png) !important;
+}
+
+
+/**************************************测试****************************************************/
+
+.testnightly {
+	background-image: url(../css/image/penal.png) !important;
+}
+/**/
+.testnightly_testnightly_1{
+	background-image: url(../css/image/penal_people.png) !important;
+}

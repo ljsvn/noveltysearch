@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<object-create-rule pattern="products"
+		classname="com.ods.util.config.bean.xml.Products" />
+	<set-properties-rule />
+	<pattern value="products/product">
+		<object-create-rule classname="com.ods.util.config.bean.xml.Product" />
+		<bean-property-setter-rule pattern="name" />
+		<bean-property-setter-rule pattern="value" /> 		
+		<set-next-rule methodname="addProductList" />
+	</pattern>
+</digester-rules>

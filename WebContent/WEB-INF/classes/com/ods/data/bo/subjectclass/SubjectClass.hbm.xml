@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--表的映射文件 -->
+<hibernate-mapping package="com.ods.data.bo.subjectclass">
+	<class name="SubjectClass" table="t_subject_class">
+		<id column="subject_class_pk" name="subjectClassPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="father_pk" name="fatherPk" type="string" />
+		<property column="father_pk_all" name="fatherPkAll" type="string" />
+		<property column="subject_class_name" name="subjectClassName"
+			type="string" />
+		<property column="alias_name1" name="aliasName1" type="string" />
+		<property column="alias_name2" name="aliasName2" type="string" />
+		<property column="alias_name3" name="aliasName3" type="string" />
+		<property column="subject_class_ename" name="subjectClassEname"
+			type="string" />
+		<property column="alias_ename1" name="aliasEname1" type="string" />
+		<property column="alias_ename2" name="aliasEname2" type="string" />
+		<property column="alias_ename3" name="aliasEname3" type="string" />
+		<property column="alias_ename4" name="aliasEname4" type="string" />
+		<property column="alias_ename5" name="aliasEname5" type="string" />
+		<property column="retain1" name="retain1" type="string" />
+		<property column="retain2" name="retain2" type="string" />
+		<property column="is_key_word" name="isKeyWord" type="int" />
+		<property column="state" name="state" type="string" />
+		<property column="order_no" name="orderNo" type="int" />
+		<property column="memo" name="memo" type="string" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+		<property column="alias_name4" name="aliasName4" type="string" />
+		<property column="alias_name5" name="aliasName5" type="string" />
+		<property column="alias_name6" name="aliasName6" type="string" />
+		<property column="alias_ename6" name="aliasEname6" type="string" />
+		<property column="alias_ename7" name="aliasEname7" type="string" />
+		<property column="alias_ename8" name="aliasEname8" type="string" />
+		<property column="alias_ename9" name="aliasEname9" type="string" />
+		<property column="retain3" name="retain3" type="string" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="jsp_new" deleted="false" description="" enabled="true" name="ods_jsp_template">&lt;%--&#13;
+    功能            :&#13;
+    创建时间  :${date} ${time}&#13;
+    创建者        : hou.manyuan@163.com &#13;
+    Ods版权所有&#13;
+--%&gt;&#13;
+&lt;%@include file="/jsp/common/hidden_role_button.jsp" %&gt;
+&lt;%@ page language="java" contentType="text/html; charset=${encoding}"&#13;
+    pageEncoding="${encoding}"%&gt;&#13;
+</template></templates>

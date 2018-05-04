@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- jasper报表管理 -->
+	<package name="jbpm" namespace="/jbpm" extends="definepackage">  
+		<!-- 进入画流程demo -->
+		<action name="drawJBpmDemo">
+			<result>/jsp/jbpm/drawprocessdemo.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action> 
+	</package>
+</struts>

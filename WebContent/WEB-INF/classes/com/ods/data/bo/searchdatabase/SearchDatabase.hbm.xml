@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--表的映射文件 -->
+<hibernate-mapping package="com.ods.data.bo.searchdatabase">
+	<class name="SearchDatabase" table="t_search_database">
+		<id column="search_database_pk" name="searchDatabasePk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="search_database_name" name="searchDatabaseName"
+			type="string" />
+		<property column="url" name="url" type="string" />
+		<property column="age_limit" name="ageLimit" type="string" />
+		<property column="search_strategy" name="searchStrategy"
+			type="string" />
+		<property column="retain1" name="retain1" type="string" />
+		<property column="retain2" name="retain2" type="string" />
+		<property column="order_no" name="orderNo" type="int" />
+		<property column="memo" name="memo" type="string" />
+		<property column="create_org_pk" name="createOrgPk" type="string" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

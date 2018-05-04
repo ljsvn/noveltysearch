@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<!-- 一级菜单 -->
+	<menuone id="firstPage" name="首页">
+		<url>portal/show/homePagePoratl.ods</url>
+		<orderBy>0</orderBy>
+	</menuone>
+</menu>

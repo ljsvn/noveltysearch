@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.user.bo">
+	<class name="UserRole"  table="t_user_role">
+		<id column="user_role_pk" 				name="userRolePk" 		type="string" unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="user_pk" 				name="userPk" 			type="string" />
+		<property column="role_pk" 				name="rolePk" 			type="string" />
+		<property column="delete_type" 	 	 	name="deleteType" 		type="int" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<menuone id="subjectclass" name="查新工作">
+		<url>#</url>
+		<orderBy>3</orderBy>
+        <childmenutwo id="treenovelty" name="主题词分类管理" leaf="true"> 
+	        <url>subject/class/index_page.ods</url>
+	        <orderBy>1</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="contract" name="查新委托" leaf="true"> 
+	        <url>contract/index_page.ods</url>
+	        <orderBy>2</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="subjectclassmaneage" name="确定主题词" leaf="true"> 
+	        <url>confirem/index_page.ods?iskeyword=0</url>
+	        <orderBy>3</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="keyword" name="检索词列表" leaf="true"> 
+	        <url>key/word/index_page.ods?iskeyword=1</url>
+	        <orderBy>4</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="searchtermsstrategy" name="编写策略" leaf="true"> 
+	        <url>search/terms/strategy/index_page.ods</url>
+	        <orderBy>5</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="retrievaldatabase" name="编写策略" leaf="true"> 
+	        <url>retrieval/database/index_page.ods</url>
+	        <orderBy>6</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="searchresult" name="文献排序" leaf="true"> 
+	        <url>search/result/index_page.ods</url>
+	        <orderBy>7</orderBy>  
+        </childmenutwo>
+             <childmenutwo id="generatereport" name="生成报告" leaf="true"> 
+	        <url>search/terms/strategy/index_page.ods</url>
+	        <orderBy>8</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="reportaudit" name="报告审核" leaf="true"> 
+	        <url>search/terms/strategy/sh_index_page.ods</url>
+	        <orderBy>9</orderBy>  
+        </childmenutwo>
+        <childmenutwo id="workschedule" name="工作进度" leaf="true"> 
+	        <url>work/schedule/index_page.ods</url>
+	        <orderBy>10</orderBy>  
+        </childmenutwo>
+        
+        <childmenutwo id="filequery" name="档案查询" leaf="true"> 
+	        <url>file/query/index_page.ods</url>
+	        <orderBy>11</orderBy>  
+        </childmenutwo>
+	</menuone>
+</menu>

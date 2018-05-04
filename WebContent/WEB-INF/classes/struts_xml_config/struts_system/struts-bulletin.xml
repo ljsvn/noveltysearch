@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!--公文发布-->
+	<package name="bulletin_send" namespace="/bulletin/send" extends="definepackage">
+		<!--进入公告发布页面-->
+		<action name="index_page">
+			<result>/jsp/bulletin/bulleninsend/bulletinInfo_add.jsp</result>
+		</action>
+		<!--坐席列表加载-->
+		<action name="agents_list" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="agentsList">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<!--公告数据新增保存-->
+		<action name="add_info" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!--已发公告列表首页-->
+		<action name="list_index_page">
+			<result>/jsp/bulletin/bulleninsend/bulletinInfo_list.jsp</result>
+		</action>
+		<!--已发公告列表加载-->
+		<action name="list_info" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="listInfo">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 查看公告信息 -->
+		<action name="view_page" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="viewPage">
+			<result name="success">/jsp/bulletin/bulleninsend/bulletinInfo_view.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!--公告附件文件验证-->
+		<action name="file_cleck_file" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="fileCleckFile">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!--公告附件文件验证-->
+		<action name="file_download" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="fileDownload">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 删除公告信息 -->
+		<action name="delete_info" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	<!-- 图片上传 -->
+	<package name="bulletin_image" namespace="/bulletin/image" extends="definepackage">
+		<action name="upload_page"> 
+			<result>/jsp/bulletin/bulleninsend/image_upload.jsp</result>
+		</action>
+		<!-- 上传公告图片 -->
+		<action name="bulletin_image_info" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="bulletinImageInfo">
+			<!-- 配置fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件大小 -->
+				<param name="maximumSize">5242880</param> 
+			</interceptor-ref> 
+			<interceptor-ref name="defaultStack"/>
+			<result name="input">/jsp/resultsMessage/image_upload_error.jsp</result>
+			<result name="success">/jsp/resultsMessage/image_upload_success.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 公告接收信息-->
+	<package name="bulletin_receive" namespace="/bulletin/receive" extends="definepackage">
+		<!-- 公告接收信息首页-->
+		<action name="index_page">
+			<result>/jsp/bulletin/bulletinreceive/bulletinetreceive_index.jsp</result>
+		</action>
+		<!-- 公告接收信息列表-->
+		<action name="list_info" class="com.ods.base.action.system.bulletin.BulletinReceiveAction" method="listInfo">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 更改阅读状态 -->
+		<action name="is_read" class="com.ods.base.action.system.bulletin.BulletinReceiveAction" method="isRead">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 删除公告信息 -->
+		<action name="delete_info" class="com.ods.base.action.system.bulletin.BulletinReceiveAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 公告草稿-->
+	<package name="bulletin_draft" namespace="/bulletin/draft" extends="definepackage">
+		<!--进入公告草稿页面-->
+		<action name="index_page">
+			<result>/jsp/bulletin/bulletindraftinfo/bulletin_draft_index.jsp</result>
+		</action>
+		<!-- 发送公告草稿页面 -->
+		<action name="send_draft_page" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="viewPage">
+			<result name="success">/jsp/bulletin/bulletindraftinfo/bulletin_draft_send.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 发送公告草稿 -->
+		<action name="send_draft" class="com.ods.base.action.system.bulletin.BulletinInfoAction" method="sendDraft">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+</struts>

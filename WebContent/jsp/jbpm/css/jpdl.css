@@ -1,0 +1,99 @@
+.palette {
+    font:normal 14px tahoma,arial,helvetica,sans-serif;
+    background-color: white;
+    border: 1px solid silver;
+    position: absolute;
+    left: 710px;
+    top: 10px;
+    width: 200px;
+    height: 500px;
+    z-index: 1000;
+}
+
+.palette .dragHandle{
+    background: url(../css/images/handle-bg.gif) 2px;
+    line-height: 25px;
+    vertical-align: middle;
+}
+
+.palette .dragHandle span{
+    padding:0 20px
+}
+
+.palette li.paletteBar div{
+    padding: 2px 0 2px 20px;
+    vertical-align: middle;
+    margin: 1px;
+    background: url(../css/images/bar-bg.gif);
+}
+
+.palette ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height:20px;
+}
+
+.palette ul li span{
+    color: black;
+    text-decoration: none;
+    padding: 0px 0 0px 20px;
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    line-height: 20px;
+    cursor: pointer;
+    -moz-user-select: none;
+}
+
+.palette ul li.paletteItem.select span{
+    background-image:url(../css/images/16/select16.gif);
+}
+.palette ul li.paletteItem.marquee span{
+    background-image:url(../css/images/16/marquee16.gif);
+}
+.palette ul li.paletteItem.transition span{
+    background-image:url(../css/images/16/flow_sequence.png);
+}
+.palette ul li.paletteItem.state span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.start span{
+    background-image:url(../css/images/16/start_event_empty.png);
+}
+.palette ul li.paletteItem.end span{
+    background-image:url(../css/images/16/end_event_terminate.png);
+}
+.palette ul li.paletteItem.cancel span{
+    background-image:url(../css/images/16/end_event_cancel.png);
+}
+.palette ul li.paletteItem.error span{
+    background-image:url(../css/images/16/end_event_error.png);
+}
+.palette ul li.paletteItem.hql span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.sql span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.java span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.script span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.esb span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.task span{
+    background-image:url(../css/images/16/task_empty.png);
+}
+.palette ul li.paletteItem.decision span{
+    background-image:url(../css/images/16/gateway_exclusive.png);
+}
+.palette ul li.paletteItem.fork span{
+    background-image:url(../css/images/16/gateway_parallel.png);
+}
+.palette ul li.paletteItem.join span{
+    background-image:url(../css/images/16/gateway_parallel.png);
+}
+

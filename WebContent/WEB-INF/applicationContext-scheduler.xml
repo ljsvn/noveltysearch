@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!--每2分钟进行一次消息提醒发送查询开始 -->
+	<bean id="scheduleInfoMsgQueryId" class="com.ods.scheduler.SchedulerRemindMsg"></bean>
+	<bean id="schedulerJobDetailMsgQueryId"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="scheduleInfoMsgQueryId" />
+		<property name="targetMethod" value="searchSendMsg" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="cronTriggerMsgQueryId" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="schedulerJobDetailMsgQueryId" />
+		<property name="cronExpression">
+			<value>0 0/2 * * * ?</value>
+		</property>
+	</bean>
+	<!--每2分钟进行一次即时消息发送查找结束 -->
+
+	<!--每隔5分钟进行一次业务调度，处理相关业务开始 -->
+	<bean id="scheduler5Minute" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.ods.scheduler.Scheduler5Minute</value>
+		</property>
+	</bean>
+	<bean id="cronscheduler5Minute" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="scheduler5Minute" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 * * * ?</value>
+		</property>
+	</bean>
+	<!--每隔10分钟进行一次的看板调度开始 -->
+	<bean id="schedulerKanban" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.ods.scheduler.SchedulerKanban</value>
+		</property>
+	</bean>
+	<bean id="cronschedulerKanban" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="schedulerKanban" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/10 * * * ?</value>
+		</property>
+	</bean>
+	<!--每天进行一次的调度开始 -->
+	<bean id="schedulerDay" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.ods.scheduler.SchedulerDay</value>
+		</property>
+	</bean>
+	<bean id="cronSchedulerDay" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="schedulerDay" />
+		</property>
+		<property name="cronExpression">
+			<value>0 30 23 * * ? *</value>
+		</property>
+	</bean>
+	<!--每月进行一次的调度开始 -->
+	<bean id="schedulerMonth" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.ods.scheduler.SchedulerMonth</value>
+		</property>
+	</bean>
+
+	<!--在每个月的最后一天的下午23：00触发 -->
+	<bean id="cronSchedulerMonth" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="schedulerMonth" />
+		</property>
+		<property name="cronExpression">
+			<value>0 00 23 L * ?</value>
+		</property>
+	</bean>
+
+	<!--spring 调度工作启动 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronSchedulerDay" />
+				<ref bean="cronSchedulerMonth" />
+				<ref bean="cronschedulerKanban" />
+				<!-- <ref bean="cronscheduler5Minute"/> -->
+				<ref bean="cronTriggerMsgQueryId" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

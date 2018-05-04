@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--v_user_menu_two表的映射文件-->
+<hibernate-mapping package="com.ods.base.bo.menu">
+<class name="UserMenuTwo" table="v_user_menu_two">
+ <id column="user_two_menu_pk" name="userTwoMenuPk"  type="string"  unsaved-value="0">
+<generator class="guid" />
+</id><property column="user_pk"          name="userPk"           type="string" />
+<property column="role_pk"          name="rolePk"           type="string" />
+<property column="menu_id_one"          name="menuIdOne"           type="string" />
+<property column="menu_id_two"          name="menuIdTwo"           type="string" />
+<property column="threeCount"          name="threeCount"           type="int" />
+ 
+</class> 
+</hibernate-mapping>

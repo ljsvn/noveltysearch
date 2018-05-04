@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>org.logicalcobwebs.proxool.ProxoolDriver</value>
+		</property>
+		<property name="url">
+			<value>proxool.dbpool</value>
+		</property>
+	</bean>
+	<!-- 配置sessioFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		destroy-method="destroy">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="mappingResources">
+			<!-- Hibernate配置文件 -->
+			<list>
+				<!-- system -->
+				<value>com/ods/base/bo/menu/MenuModual.hbm.xml</value>
+				<value>com/ods/base/bo/menu/MenuFunction.hbm.xml</value>
+				<value>com/ods/base/bo/menu/MenuPortal.hbm.xml</value>
+				<value>com/ods/base/bo/menu/MenuButton.hbm.xml</value>
+				<value>com/ods/base/bo/system/org/bo/Organization.hbm.xml</value>
+				<value>com/ods/base/bo/system/org/bo/OrganizationDetail.hbm.xml</value>
+				<value>com/ods/base/bo/system/user/bo/User.hbm.xml</value>
+				<value>com/ods/base/bo/system/user/bo/UserRole.hbm.xml</value>
+				<value>com/ods/base/bo/system/role/bo/Role.hbm.xml</value>
+				<value>com/ods/base/bo/system/role/bo/RoleMenu.hbm.xml</value>
+				<value>com/ods/base/bo/system/role/bo/RolePortal.hbm.xml</value>
+				<value>com/ods/base/bo/system/role/bo/RoleButton.hbm.xml</value>
+				<value>com/ods/base/bo/system/role/bo/RoleOrg.hbm.xml</value>
+				<value>com/ods/base/bo/system/log/bo/OperationLog.hbm.xml</value>
+				<value>com/ods/base/bo/menu/UserMenuTwo.hbm.xml</value>
+				<value>com/ods/base/bo/menu/UserMenuThree.hbm.xml</value>
+				<value>com/ods/base/bo/system/excelfileimport/ExeclFileImportInfo.hbm.xml</value>
+				<value>com/ods/base/bo/system/excelfileimport/ExeclFileImportTempContent.hbm.xml</value>
+				<value>com/ods/base/bo/system/bulletin/BulletinInfo.hbm.xml</value>
+				<value>com/ods/base/bo/system/bulletin/BulletinReceive.hbm.xml</value>
+				<value>com/ods/base/bo/system/bulletin/BulletinViewInfo.hbm.xml</value>
+				<value>com/ods/dic/bo/datadictionarycommon/DataDictionaryCommon.hbm.xml</value>
+				<value>com/ods/base/bo/system/user/bo/UserOrg.hbm.xml</value>
+				
+				<value>com/ods/data/bo/filemanage/FileOperation.hbm.xml</value>				                                                                                                                                                                                                                                                                                
+                <value>com/ods/data/bo/filemanage/FileDirectory.hbm.xml</value>
+                <value>com/ods/data/bo/filemanage/FileStore.hbm.xml</value>
+                <value>com/ods/data/bean/SerialNumber/SerialNumber.hbm.xml</value>
+				<!-- system -->
+				<!-- 工程 -->
+				<value>com/ods/data/bo/subjectclass/SubjectClass.hbm.xml</value>
+				<value>com/ods/data/bo/contract/Contract.hbm.xml</value>
+				<value>com/ods/data/bo/contractsubject/ContractSubject.hbm.xml</value>
+                <value>com/ods/data/bo/searchresult/SearchResult.hbm.xml</value>
+                <value>com/ods/data/bo/retrievaldatabase/RetrievalDatabase.hbm.xml</value>
+                <value>com/ods/data/bo/searchdatabase/SearchDatabase.hbm.xml</value>
+                <value>com/ods/data/bo/subjectclassweight/SubjectClassWeight.hbm.xml</value>
+                
+				<!-- 工程 -->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">com.ods.util.hibernate.SQLServerDialectExtends</prop>
+				<prop key="hibernate.jdbc.use_scrollable_resultset">true</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">true</prop>
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="dbSpringHibernate" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target">
+			<bean id="dbSpringHibernateBean" class="com.ods.util.spring.DBSpringHibernate">
+				<property name="sessionFactory">
+					<ref local="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="DAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="dbSpringHibernate" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 设置spring上下文供工程调用 -->
+	<bean class="com.ods.util.spring.SpringBeanFactory"></bean>
+
+</beans>

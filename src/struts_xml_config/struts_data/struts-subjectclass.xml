@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--  -->
+	<package name="subject_class" namespace="/subject/class" extends="definepackage">
+		<!-- -->
+		<action name="index_page">
+			<result>/jsp/data/subjectclass/index_page.jsp</result>
+		</action>
+		<!-- 加载所有树-->
+		<action name="tree_info" class="com.ods.data.action.SubjectClassAction" method="treeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		
+		<!-- 进入添加 -->
+		<action name="add_page">
+			<result name="success">/jsp/data/subjectclass/subjectclass_add.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行添加 -->
+		<action name="add_info" class="com.ods.data.action.SubjectClassAction" method="addInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 进入修改 -->
+		<action name="update_page" class="com.ods.data.action.SubjectClassAction" method="modifyPage">
+			<result name="success">/jsp/data/subjectclass/subjectclass_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 执行修改 -->
+		<action name="update_info" class="com.ods.data.action.SubjectClassAction" method="updateInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		<!-- 进入 -->
+		<action name="view_page">
+			<result name="success">/jsp/data/subjectclass/subjectclass_view.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		
+		<action name="updateSubjectClass" class="com.ods.data.action.SubjectClassAction" method="updateSubjectClass">
+			<!-- 正确页面 -->
+			<result name="success">/jsp/data/subjectclass/updateSubjectClass.jsp</result>
+			<!-- 错误页面-->
+			<result name="error">/jsp/data/subjectclass/updateSubjectClass.jsp</result>
+		</action>
+		
+		<!-- 执行删除 -->
+		<action name="delete_info" class="com.ods.data.action.SubjectClassAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<!--  -->
+	<package name="contract" namespace="/contract" extends="definepackage">
+		<!-- -->
+		<action name="index_page">
+			<result>/jsp/data/contract/contract_index.jsp</result>
+		</action>
+		
+		<!--列表信息-->
+		<action name="list_info" class="com.ods.data.action.ContractAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		
+		<!-- 添加 -->
+		<action name="add_info" class="com.ods.data.action.ContractAction"  method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		<!-- 进入修改 -->
+		<action name="modify_page" class="com.ods.data.action.ContractAction" method="modifyPage">
+			<result name="success">/jsp/data/contract/contract_Update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		
+		<!-- 进入查看 -->
+		<action name="view_page" class="com.ods.data.action.ContractAction" method="viewPage">
+			<result name="success">/jsp/data/contract/contract_View.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!--删除-->
+		<action name="delete_info" class="com.ods.data.action.ContractAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+	
+	<package name="contract_file" namespace="/contract/file" extends="definepackage">
+		<!-- 进入编辑页面-->
+		<action name="modify_page" class="com.ods.interfix.action.suspectirregularity.SuspectIrregularityAction" method="modifyPage">
+			<result name="success">/jsp/suspect/dynamic/irregularity_modify.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 进入查看页面-->
+		<action name="view_page" class="com.ods.interfix.action.suspectirregularity.SuspectIrregularityAction" method="modifyPage">
+			<result name="success">/jsp/suspect/dynamic/irregularity_view.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!-- 列表 -->
+		<action name="list_info" class="com.ods.interfix.action.suspectirregularity.SuspectIrregularityAction" method="listInfo">
+			<result>/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 执行编辑操作-->
+		<action name="modify_info" class="com.ods.interfix.action.suspectirregularity.SuspectIrregularityAction" method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		<!-- 执行删除或恢复 -->
+		<action name="deleorreset_info" class="com.ods.interfix.action.suspectirregularity.SuspectIrregularityAction" method="deleOrResetInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		
+		<!-- 下载excel -->
+		<action name="downLoad_contact_excel" class="com.ods.data.action.ContractExcelAction" method="downLoadExcel">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="confirem" namespace="/confirem" extends="definepackage">
+		<!-- -->
+		<action name="index_page">
+			<result>/jsp/data/confirm/confirem_index.jsp</result>
+		</action>
+		
+		<!--列表信息-->
+		<action name="list_info" class="com.ods.data.action.ContractSubjectAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		
+		<!-- 添加 -->
+		<action name="add_info" class="com.ods.data.action.ContractSubjectAction"  method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		<!-- 进入修改 -->
+		<action name="modify_page" class="com.ods.data.action.ContractSubjectAction" method="modifyPage">
+			<result name="success">/jsp/data/contract/contract_Update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		
+		<!-- 进入查看 -->
+		<action name="view_page" class="com.ods.data.action.ContractSubjectAction" method="modifyPage">
+			<result name="success">/jsp/data/confirm/contractsubject_View.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!--删除-->
+		<action name="delete_info" class="com.ods.data.action.ContractSubjectAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		<action name="confirem_tree_info" class="com.ods.data.action.ContractSubjectAction" method="resourceTreeInfo">
+			<result>/jsp/resultsMessage/tree_info.jsp</result>
+		</action>
+		
+		
+		<!-- 添加信息 -->
+		<action name="modi_tree_info" class="com.ods.data.action.ContractSubjectAction" method="modiInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+	</package>
+</struts>

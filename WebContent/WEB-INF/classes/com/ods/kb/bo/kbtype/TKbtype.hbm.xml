@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ods.kb.bo.kbtype.TKbtype" table="t_kbtype" >
+		<id name="kbTypePk" type="java.lang.String">
+			<column name="kb_type_pk" length="50"/>
+			<generator class="guid" />
+		</id>
+		<property name="kbTypeCode" type="java.lang.String">
+			<column name="kb_type_code" length="100"  />
+		</property>
+		<property name="kbTypeContent" type="java.lang.String">
+			<column name="kb_type_content" length="100"  />
+		</property>
+		<property name="deleteType" type="java.lang.Integer">
+			<column name="delete_type"/>
+		</property>
+		<property name="createTime" type="java.lang.String">
+			<column name="create_time" length="100"  />
+		</property>
+	</class>
+</hibernate-mapping>

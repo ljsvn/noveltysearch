@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.menu">
+	<class name="MenuPortal" table="v_user_menu_portal">
+		<id column="menu_portal_pk" name="menuPortalPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="user_pk" name="userPk" type="string" />
+		<property column="role_pk" name="rolePk" type="string" />
+		<property column="portals_id" generated="never" lazy="false"
+			name="portalsId" type="string" />
+		<property column="portal_id" name="portalId" type="string" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<portals id="portalcolmun1" columnNo="1">
+		<columnWidth>0.5</columnWidth>
+		<style>padding:5px 0 5px 5px</style>
+		<portal id="blacklist" title="工作进度">
+			<height>300</height>
+			<url>/work/schedule/index_page.ods</url>
+			<orderBy>1</orderBy>
+		</portal>
+	</portals>
+	<portals id="portalcolmun2" columnNo="2">
+		<columnWidth>0.5</columnWidth>
+		<style>padding:5px 0 5px 5px</style>
+		<portal id="toberead" title="待阅公告">
+			<height>300</height>
+			<url>/jsp/bulletin/bulletinreceive/receive_list_page.jsp?isread=0</url>
+			<orderBy>1</orderBy>
+		</portal>
+	</portals>
+</menu>

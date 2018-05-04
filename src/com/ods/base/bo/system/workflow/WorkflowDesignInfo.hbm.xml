@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.base.bo.system.workflow">
+	<class name="WorkflowDesignInfo" table="t_workflow_design_info">
+		<id column="design_info_pk" name="designInfoPk" type="string" unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="workflow_name" 	name="workflowName" type="string" />
+		<property column="workflow_file_name" 		name="workflowFileName" 	type="string" />
+		<property column="workflow_type"		name="workflowType" 	type="int" /> 
+		<property column="create_user_pk" 	name="createUserPk" 		type="string" />
+		<property column="create_time" 		name="createTime" 	type="string" />
+	</class>
+</hibernate-mapping>

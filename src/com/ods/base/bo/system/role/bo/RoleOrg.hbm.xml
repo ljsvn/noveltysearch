@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--Role表的映射文件 -->
+<hibernate-mapping package="com.ods.base.bo.system.role.bo">
+	<class name="RoleOrg" table="t_role_org">
+		<id column="role_org_pk" name="roleOrgPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="user_id" name="userId" type="string" />
+		<property column="org_id" name="orgId" type="string" />
+		<property column="role_pk" name="rolePk" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+	</class>
+</hibernate-mapping>

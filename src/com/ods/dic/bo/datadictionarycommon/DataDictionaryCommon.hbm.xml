@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ods.dic.bo.datadictionarycommon">
+	<class name="DataDictionaryCommon" table="t_data_dictionary_common">
+		<id column="dic_common_pk" name="dicCommonPk" type="string"
+			unsaved-value="0">
+			<generator class="guid" />
+		</id>
+		<property column="dic_common_father_pk" name="dicCommonFatherPk"
+			type="string" />
+		<property column="dic_code" name="dicCode" type="string" />
+		<property column="dic_name" name="dicName" type="string" />
+		<property column="frist_alphabet" name="fristAlphabet" type="string" />
+		<property column="full_alphabet" name="fullAlphabet" type="string" />
+		<property column="dict_type" name="dictType" type="string" />
+		<property column="delete_type" name="deleteType" type="int" />
+		<property column="create_user_pk" name="createUserPk" type="string" />
+		<property column="create_time" name="createTime" type="string" />
+		<property column="node_orderby" name="nodeOrderby" type="int" />
+	</class>
+</hibernate-mapping>

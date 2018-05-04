@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="searchdatabase" namespace="/search/database" extends="definepackage">
+		<!-- -->
+		<action name="index_page">
+			<result>/jsp/data/searchdatabase/searchdatabase_index.jsp</result>
+		</action>
+		<!--列表信息-->
+		<action name="list_info" class="com.ods.data.action.SearchDatabaseAction" method="listInfo">
+			<result name="success">/jsp/common/grid.jsp</result>
+		</action>
+		<!-- 添加 -->
+		<action name="add_info" class="com.ods.data.action.SearchDatabaseAction"  method="modifyInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		<!-- 进入修改 -->
+		<action name="modify_page" class="com.ods.data.action.SearchDatabaseAction" method="modifyPage">
+			<result name="success">/jsp/data/searchdatabase/searchdatabase_update.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		
+		<!-- 进入查看 -->
+		<action name="view_page" class="com.ods.data.action.SearchDatabaseAction" method="modifyPage">
+			<result name="success">/jsp/data/searchdatabase/searchdatabase_View.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+		<!--删除-->
+		<action name="delete_info" class="com.ods.data.action.SearchDatabaseAction" method="deleteInfo">
+			<result name="success">/jsp/resultsMessage/example_msg.jsp</result>
+			<result name="error">/jsp/resultsMessage/example_msg.jsp</result>
+		</action>
+		
+		
+		<action name="select_list">
+			<result name="success">/jsp/data/retrievaldatabase/select_searchdatabase_list.jsp</result>
+			<result name="error">/jsp/resultsMessage/infoisnull.jsp</result>
+		</action>
+	</package>
+	
+	
+</struts>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr/dwr30.dtd">
+<dwr> 
+	<allow>
+		<!--#######################页面获取消息#######################--> 
+		<!-- 
+		<convert converter="bean" match="com.ods.base.bo.system.workstations.bo.workflow.view.UserMsgCountView"></convert> 
+		<create creator="new" javascript="userMsgCountDwr" >
+			<param name="class" value="com.ods.util.dwr.IndexBottomMsgDwr"/>
+			<include method="getIndexBottomMsg" />
+		</create> 
+		 -->
+		<!--#######################Jasper报表#######################-->
+		<convert converter="bean" match="com.ods.util.jasper.bo.JasperShowBean"></convert> 
+		<create creator="new" javascript="jasperContentDwr" >
+			<param name="class" value="com.ods.util.jasper.util.JasperContentDwr"/>
+			<include method="jasperHtmlBuilder" /> 
+			<include method="printJapserReportFile" /> 
+			<include method="downloadJapserFile" /> 
+		</create> 
+		<!--#######################即时消息#######################--> 
+		<create creator="new" javascript="mesgRecive" scope="application">
+			<param name="class" value="com.ods.base.action.system.bulletin.DwrMessageSend"/>
+		</create>
+	</allow>  
+</dwr>
