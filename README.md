@@ -1,8 +1,11 @@
 # noveltysearch
 
+（1）       查新项目的科学技术要点：应充分反映查新项目的概貌，具体内容包括：项目所属技术领域、项目背景及国内/国外情况简述、要解决的技术问题、解决其技术问题拟/已采用的技术方案或方法、主要技术特征、所达到的技术效果及应用情况等。
 
-All the factors, including the literature support conditions, searching means, the capability of staff members,
-the cooperation of users and staff members, literature searching, report writing and report checking, etc., 
-which impair the quality of sci-tech novelty search, are investigated. And then lots of measurements,
-including regulating novelty search agencies, training staff members, specifying the areas of search,
-unifying the requirements for writing reports, evaluation standards and management are put forward.
+（2）       查新项目的查新点：是指需要查证其新颖性的具体技术创新内容，应是项目技术内容的本质特点，应以通用、规范的科学技术概念清楚表达，而不是简单、笼统或者概括的整体特点描述。每个项目查新点不应超过3点。
+
+（3）       中英文对照的检索词：应围绕查新点来选择，包括规范词、关键词、各种同义词、近义词、全称及缩写、化学物质名称、CAS登记号、分子式及结构式、物种拉丁名、专利分类号等。若查新范围仅限国内，可不提供英文检索词。             
+
+（4）       查新项目知识产权情况：指委托人申请、拥有或使用的与本委托项目相关的专利情况。
+
+（5）       与查新项目密切相关的国内外参考文献：应尽可能注明文献的著者、题目、刊名（年、卷、期、页），以供查新机构参考。 
